@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>박연희 | 퍼블리셔 포트폴리오</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+    /* 토큰 */
+    :root {
+      --col-bg: #ffffff;
+      --col-surface: #f5f5f5;
+      --col-point: #2b2b2b;
+      --col-accent: #555555;
+      --col-muted: #999999;
+      --col-border: #e0e0e0;
+      --col-tag-bg: #efefef;
+
+      --ff-base: 'Noto Sans KR', sans-serif;
+
+      --sp-xs: 4px;
+      --sp-sm: 8px;
+      --sp-md: 16px;
+      --sp-lg: 32px;
+      --sp-xl: 64px;
+      --sp-2xl: 120px;
+
+      --radius: 4px;
+      --max-w: 860px;
+    }
+
+    /* 리셋 */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--col-bg);
+      color: var(--col-point);
+      font-family: var(--ff-base);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* 레이아웃 */
+    .l-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--sp-lg);
+    }
+
+    /* 헤더 / 네비 */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--col-border);
+    }
+
+    .site-header__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--sp-lg);
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header__logo {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .site-nav__list {
+      display: flex;
+      gap: var(--sp-lg);
+    }
+
+    .site-nav__link {
+      font-size: 13px;
+      color: var(--col-accent);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .site-nav__link:hover {
+      color: var(--col-point);
+    }
+
+    /* 섹션 공통 */
+    .section {
+      padding: var(--sp-2xl) 0;
+    }
+
+    .section+.section {
+      border-top: 1px solid var(--col-border);
+    }
+
+    .section__label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--col-muted);
+      margin-bottom: var(--sp-xl);
+    }
+
+    /* 히어로 */
+    .hero {
+      padding-top: calc(var(--sp-2xl) + 56px);
+      padding-bottom: var(--sp-2xl);
+    }
+
+    .hero__eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--col-muted);
+      margin-bottom: var(--sp-md);
+    }
+
+    .hero__title {
+      font-size: clamp(36px, 6vw, 58px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--sp-lg);
+    }
+
+    .hero__title em {
+      font-style: normal;
+      /* 시그니처: 텍스트 언더라인 — 손으로 그은 듯한 굵은 보더 */
+      border-bottom: 3px solid var(--col-point);
+      padding-bottom: 2px;
+    }
+
+    .hero__desc {
+      max-width: 480px;
+      font-size: 16px;
+      color: var(--col-accent);
+      line-height: 1.8;
+      margin-bottom: var(--sp-xl);
+    }
+
+    .hero__links {
+      display: flex;
+      gap: var(--sp-md);
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-sm);
+      height: 44px;
+      padding: 0 var(--sp-lg);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      border-radius: var(--radius);
+      transition: opacity 0.2s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      opacity: 0.75;
+    }
+
+    .btn--solid {
+      background: var(--col-point);
+      color: #fff;
+      border: none;
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--col-point);
+      border: 1.5px solid var(--col-point);
+    }
+
+    /* 스킬 */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: var(--sp-md);
+    }
+
+    .skill-item {
+      padding: var(--sp-lg) var(--sp-md);
+      background: var(--col-surface);
+      border-radius: var(--radius);
+    }
+
+    .skill-item__name {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: var(--sp-sm);
+    }
+
+    .skill-item__desc {
+      font-size: 12px;
+      color: var(--col-muted);
+      line-height: 1.6;
+    }
+
+    /* 프로젝트 */
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-xl);
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-xl);
+      align-items: center;
+    }
+
+    .project-card:nth-child(even) .project-card__img {
+      order: 2;
+    }
+
+    .project-card:nth-child(even) .project-card__body {
+      order: 1;
+    }
+
+    .project-card__img {
+      aspect-ratio: 16/10;
+      background: var(--col-surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--col-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-card__img-placeholder {
+      font-size: 12px;
+      color: var(--col-muted);
+      letter-spacing: 0.06em;
+    }
+
+    .project-card__category {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--col-muted);
+      margin-bottom: var(--sp-sm);
+    }
+
+    .project-card__title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--sp-sm);
+    }
+
+    .project-card__desc {
+      font-size: 14px;
+      color: var(--col-accent);
+      margin-bottom: var(--sp-md);
+      line-height: 1.8;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-xs);
+      margin-bottom: var(--sp-md);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 500;
+      background: var(--col-tag-bg);
+      color: var(--col-accent);
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+    }
+
+    .project-card__link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--col-point);
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1px;
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+
+    .project-card__link:hover {
+      opacity: 0.6;
+    }
+
+    /* 연락처 */
+    .contact__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: var(--sp-lg);
+      flex-wrap: wrap;
+    }
+
+    .contact__title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: var(--sp-md);
+    }
+
+    .contact__desc {
+      font-size: 15px;
+      color: var(--col-accent);
+    }
+
+    .contact__links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-sm);
+      text-align: right;
+    }
+
+    .contact__link {
+      font-size: 13px;
+      color: var(--col-accent);
+      border-bottom: 1px solid var(--col-border);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .contact__link:hover {
+      color: var(--col-point);
+      border-color: var(--col-point);
+    }
+
+    /* 푸터 */
+    .site-footer {
+      border-top: 1px solid var(--col-border);
+      padding: var(--sp-lg) 0;
+    }
+
+    .site-footer__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--sp-lg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-footer__copy {
+      font-size: 12px;
+      color: var(--col-muted);
+    }
+
+    .site-footer__fe-link {
+      font-size: 12px;
+      color: var(--col-accent);
+      border-bottom: 1px solid var(--col-border);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .site-footer__fe-link:hover {
+      color: var(--col-point);
+      border-color: var(--col-point);
+    }
+
+    /* 헤더 프론트엔드 링크 버튼 */
+    .site-header__fe-link {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--col-accent);
+      border: 1px solid var(--col-border);
+      border-radius: var(--radius);
+      padding: 5px 12px;
+      margin-left: var(--sp-lg);
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .site-header__fe-link:hover {
+      color: var(--col-point);
+      border-color: var(--col-accent);
+    }
+
+    /* 경력 */
+    .career-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      list-style: none;
+    }
+
+    .career-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: var(--sp-lg);
+      padding: var(--sp-lg) 0;
+      border-bottom: 1px solid var(--col-border);
+    }
+
+    .career-item:first-child {
+      border-top: 1px solid var(--col-border);
+    }
+
+    .career-item__period {
+      font-size: 12px;
+      color: var(--col-muted);
+      padding-top: 3px;
+      white-space: nowrap;
+    }
+
+    .career-item__company {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: var(--sp-xs);
+    }
+
+    .career-item__role {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--col-muted);
+      margin-left: var(--sp-xs);
+    }
+
+    .career-item__desc {
+      font-size: 13px;
+      color: var(--col-accent);
+      line-height: 1.6;
+    }
+
+    /* 반응형 */
+    @media (max-width: 640px) {
+      :root {
+        --sp-2xl: 80px;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card:nth-child(even) .project-card__img,
+      .project-card:nth-child(even) .project-card__body {
+        order: unset;
+      }
+
+      .site-nav__list {
+        gap: var(--sp-md);
+      }
+
+      .contact__inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact__links {
+        text-align: left;
+      }
+    }
+
+    /* 접근성 */
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--col-point);
+      outline-offset: 3px;
+    }
+
+    .a11y-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 헤더 -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <span class="site-header__logo">Portfolio</span>
+      <nav class="site-nav" aria-label="페이지 내 이동">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="#about">소개</a></li>
+          <li><a class="site-nav__link" href="#skills">스킬</a></li>
+          <li><a class="site-nav__link" href="#career">경력</a></li>
+          <li><a class="site-nav__link" href="#works">작업물</a></li>
+          <li><a class="site-nav__link" href="#contact">연락처</a></li>
+        </ul>
+      </nav>
+      <!-- 프론트엔드 포트폴리오 링크 -->
+      <a href="https://drive.google.com/file/d/1pcfrgHSRVjwM59G7WKQZ77uEqs1eKqwW/view?usp=sharing"
+        class="site-header__fe-link" target="_blank" rel="noopener noreferrer"
+        aria-label="프론트엔드 포트폴리오 (새 탭에서 열림)">Frontend →</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- 히어로 -->
+    <section class="hero l-wrap" id="about" aria-label="소개">
+      <p class="hero__eyebrow">UI Publisher · 3년차</p>
+      <h1 class="hero__title">
+        개발자와 같은 언어로<br /><em>화면을 완성합니다</em>
+      </h1>
+      <p class="hero__desc">
+        금융권 SI 현장에서 쌓은 퍼블리싱 경험과<br />
+        프론트엔드 개발 역량을 함께 갖춘 퍼블리셔입니다.<br />
+        시맨틱 마크업, 접근성, BEM 방법론을 기반으로<br />
+        유지보수하기 쉬운 UI를 만듭니다.
+      </p>
+      <div class="hero__links">
+        <a href="#works" class="btn btn--solid">작업물 보기</a>
+        <a href="#contact" class="btn btn--outline">연락하기</a>
+      </div>
+    </section>
+
+    <!-- 스킬 -->
+    <section class="section l-wrap" id="skills" aria-label="보유 스킬">
+      <p class="section__label">Skills</p>
+      <ul class="skill-grid">
+        <li class="skill-item">
+          <p class="skill-item__name">HTML</p>
+          <p class="skill-item__desc">시맨틱 태그, WAI-ARIA 패턴, 접근성 마크업, 크로스브라우징</p>
+        </li>
+        <li class="skill-item">
+          <p class="skill-item__name">CSS</p>
+          <p class="skill-item__desc">BEM 방법론, CSS 변수, 반응형(미디어쿼리), Flexbox / Grid</p>
+        </li>
+        <li class="skill-item">
+          <p class="skill-item__name">JavaScript</p>
+          <p class="skill-item__desc">바닐라 JS, DOM 조작, 이벤트 위임, jQuery → 바닐라 전환 경험</p>
+        </li>
+        <li class="skill-item">
+          <p class="skill-item__name">접근성</p>
+          <p class="skill-item__desc">WCAG 2.1 기준 적용, 키보드 접근, 스크린리더 대응, aria-* 활용</p>
+        </li>
+        <li class="skill-item">
+          <p class="skill-item__name">Frontend</p>
+          <p class="skill-item__desc">React, Next.js, TypeScript, Tailwind CSS — 개발자 협업 역량</p>
+        </li>
+        <li class="skill-item">
+          <p class="skill-item__name">협업 도구</p>
+          <p class="skill-item__desc">Git / GitHub, Figma, Zeplin, 백엔드와 API 명세 조율 경험</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 경력 -->
+    <section class="section l-wrap" id="career" aria-label="경력">
+      <p class="section__label">Career</p>
+      <ol class="career-list">
+        <li class="career-item">
+          <span class="career-item__period">2026.02 — 현재</span>
+          <div class="career-item__body">
+            <p class="career-item__company">㈜우아한청년들 <span class="career-item__role">인턴</span></p>
+            <p class="career-item__desc">신선식품 입고 검수 및 품질 관리 (QC)</p>
+          </div>
+        </li>
+        <li class="career-item">
+          <span class="career-item__period">2025.03 — 2026.09</span>
+          <div class="career-item__body">
+            <p class="career-item__company">프론트엔드 엔지니어 부트캠프</p>
+            <p class="career-item__desc">React / Next.js / TypeScript 심화 학습, 팀 프로젝트 3회, Git Flow 협업</p>
+          </div>
+        </li>
+        <li class="career-item">
+          <span class="career-item__period">2022.08 — 2025.01</span>
+          <div class="career-item__body">
+            <p class="career-item__company">㈜티소프트 <span class="career-item__role">사원</span></p>
+            <p class="career-item__desc">금융권(은행·증권·카드) SI 프로젝트 UI/UX 디자인 및 웹 퍼블리싱 전담</p>
+          </div>
+        </li>
+        <li class="career-item">
+          <span class="career-item__period">2020.11 — 2021.03</span>
+          <div class="career-item__body">
+            <p class="career-item__company">미로아이티 <span class="career-item__role">사원</span></p>
+            <p class="career-item__desc">자율주행 서비스 기능 안내 페이지 UI/UX 기획 및 퍼블리싱 전담</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+
+    <!-- 작업물 -->
+    <section class="section l-wrap" id="works" aria-label="작업물">
+      <p class="section__label">Works</p>
+      <ul class="project-list">
+
+        <li>
+          <article class="project-card" aria-label="금융권 관리자 시스템">
+            <div class="project-card__img" aria-hidden="true">
+              <!-- 실제 썸네일 이미지로 교체하세요 -->
+              <!-- <img src="./img/thumb_finance.png" alt="금융권 관리자 시스템 화면" /> -->
+              <span class="project-card__img-placeholder">thumbnail</span>
+            </div>
+            <div class="project-card__body">
+              <p class="project-card__category">Financial · Admin</p>
+              <h2 class="project-card__title">은행 통합 관리자 센터</h2>
+              <p class="project-card__desc">
+                금융권 백오피스 관리자 시스템 UI 퍼블리싱.
+                BEM 방법론과 시맨틱 마크업, 접근성 개선 작업을 진행했습니다.
+              </p>
+              <ul class="tag-list" aria-label="사용 기술">
+                <li><span class="tag">HTML</span></li>
+                <li><span class="tag">CSS</span></li>
+                <li><span class="tag">JavaScript</span></li>
+                <li><span class="tag">BEM</span></li>
+                <li><span class="tag">ARIA</span></li>
+              </ul>
+              <a href="./bank/bank-index.html" class="project-card__link">
+                작업물 보기 →
+              </a>
+            </div>
+          </article>
+        </li>
+
+        <!-- 개인 프로젝트 추가 시 아래 항목 복사해서 사용 -->
+        <!--
+        <li>
+          <article class="project-card" aria-label="프로젝트명">
+            <div class="project-card__img">
+              <img src="./img/thumb_project.png" alt="프로젝트 화면" />
+            </div>
+            <div class="project-card__body">
+              <p class="project-card__category">카테고리</p>
+              <h2 class="project-card__title">프로젝트명</h2>
+              <p class="project-card__desc">설명</p>
+              <ul class="tag-list">
+                <li><span class="tag">HTML</span></li>
+              </ul>
+              <a href="#" class="project-card__link">작업물 보기 →</a>
+            </div>
+          </article>
+        </li>
+        -->
+
+      </ul>
+    </section>
+
+    <!-- 연락처 -->
+    <section class="section l-wrap" id="contact" aria-label="연락처">
+      <p class="section__label">Contact</p>
+      <div class="contact__inner">
+        <div>
+          <h2 class="contact__title">함께 일해요</h2>
+          <p class="contact__desc">새로운 프로젝트나 기회에 대해 편하게 연락주세요.</p>
+        </div>
+        <address class="contact__links" aria-label="연락처 정보">
+          <a href="mailto:pyeonh8@gmail.com" class="contact__link">pyeonh8@gmail.com</a>
+          <a href="https://github.com/pyeonh8" class="contact__link" target="_blank" rel="noopener noreferrer">
+            https://github.com/pyeonh8
+          </a>
+        </address>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <p class="site-footer__copy">© 2026 — 퍼블리셔 포트폴리오</p>
+      <a href="https://drive.google.com/file/d/1pcfrgHSRVjwM59G7WKQZ77uEqs1eKqwW/view?usp=sharing"
+        class="site-footer__fe-link" target="_blank" rel="noopener noreferrer" aria-label="프론트엔드 포트폴리오 (새 탭에서 열림)">프론트엔드
+        포트폴리오 →</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>

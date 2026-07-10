@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Bank 은행 통합 관리자 센터</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/load/admin-header-top.js"></script>
+  <script src="../js/load/admin-header-bottom.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- 공통 헤더 (Web Component) -->
+    <header class="common-header" role="banner">
+      <admin-header-top></admin-header-top>
+      <admin-header-bottom></admin-header-bottom>
+    </header>
+
+    <main id="main-content" class="main-content container max-width min-width">
+
+      <div class="main-content__header">
+        <h2 class="main-content__title">
+          <span class="main-content__user-name">한기획</span> 님, 안녕하세요!
+        </h2>
+      </div>
+
+      <!-- 대시보드 섹션 -->
+      <section class="dashboard" aria-label="대시보드">
+
+        <!-- 카드 영역 -->
+        <div class="dashboard__cards">
+
+          <article class="dashboard-card" aria-label="IEA NOW 현황">
+            <h3 class="dashboard-card__title">IEA NOW</h3>
+            <div class="dashboard-card__list">
+
+              <div class="dashboard-card__item dashboard-card--theme1">
+                <h4 class="dashboard-card__label">총 처리건수</h4>
+                <span class="dashboard-card__date">(2022.12.11)</span>
+                <div class="dashboard-card__info">
+                  <span class="dashboard-card__info-value">100,798</span>건
+                </div>
+              </div>
+
+              <div class="dashboard-card__item dashboard-card--theme1">
+                <h4 class="dashboard-card__label">등록서식</h4>
+                <div class="dashboard-card__info">
+                  <span class="dashboard-card__info-label">총</span>
+                  <span class="dashboard-card__info-value">55</span>
+                  <span class="dashboard-card__info-unit">건</span>
+                </div>
+              </div>
+
+              <div class="dashboard-card__item dashboard-card--theme1">
+                <h4 class="dashboard-card__label">등록상품</h4>
+                <div class="dashboard-card__info">
+                  <span class="dashboard-card__info-label">총</span>
+                  <span class="dashboard-card__info-value">35</span>
+                  <span class="dashboard-card__info-unit">건</span>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <article class="dashboard-card" aria-label="MY IEA 현황">
+            <h3 class="dashboard-card__title">MY IEA<span class="dashboard-card__date">(2022.12.12)</span></h3>
+            <div class="dashboard-card__list">
+
+              <div class="dashboard-card__item dashboard-card--theme1">
+                <h4 class="dashboard-card__label">서식의뢰</h4>
+                <div class="dashboard-card__info">
+                  <span class="dashboard-card__info-value under">0</span>
+                  <span class="dashboard-card__info-unit">건</span>
+                </div>
+              </div>
+
+              <div class="dashboard-card__item dashboard-card--theme2">
+                <h4 class="dashboard-card__label">서식XX</h4>
+                <div class="dashboard-card__info">
+                  <span class="dashboard-card__info-value under">2</span>
+                  <span class="dashboard-card__info-unit">건</span>
+                </div>
+              </div>
+
+              <div class="dashboard-card__item dashboard-card--theme3">
+                <h4 class="dashboard-card__label">상품XX</h4>
+                <span class="dashboard-card__date">(2022.12.11)</span>
+                <div class="dashboard-card__info">
+                  <span class="dashboard-card__info-value under">1</span>건
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <article class="dashboard-card" aria-label="IEA INFO">
+            <h3 class="dashboard-card__title">IEA INFO</h3>
+            <div class="dashboard-card__list">
+
+              <div class="dashboard-card__item dashboard-card--theme4">
+                <h4 class="dashboard-card__label">사용자가이드</h4>
+                <div class="dashboard-card__info">
+                  <button type="button" aria-label="사용자가이드 다운로드">다운로드</button>
+                </div>
+              </div>
+
+              <div class="dashboard-card__item dashboard-card--theme4">
+                <h4 class="dashboard-card__label">FAQ</h4>
+                <div class="dashboard-card__info">
+                  <button type="button" aria-label="FAQ 더보기">더보기</button>
+                </div>
+              </div>
+
+              <div class="dashboard-card__item dashboard-card--theme4">
+                <h4 class="dashboard-card__label">장애문의</h4>
+                <div class="dashboard-card__info">
+                  <span class="dashboard-card__info-inquiry">기업디지털채널부</span>
+                  <span class="dashboard-card__info-inquiry">이혜민 (8-9999)</span>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+        </div>
+        <!-- // dashboard__cards -->
+
+        <!-- 아코디언 영역 -->
+        <div class="dashboard__accordion">
+          <ul class="accordion" aria-label="업무 안내">
+
+            <li class="accordion__list">
+              <button type="button" class="accordion__header" aria-expanded="true" aria-controls="content-1">
+                <span class="accordion__title">서식의뢰</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+              <div id="content-1" class="accordion__content">
+                <p>* 반드시 <span class="text--point">담당자와 사전 협의 후</span>,
+                  <br /> "비대면 전자약정 양서식 등록 신청서" 전자결재를 진행해주세요!
+                </p>
+                <p>　<span class="text--point">· 업무포탈 → 전자결제 → 비대면 전자약정 양서식 등록 신청서</span></p>
+                <p>* 전자서식 신규 작업의뢰 및 서식은 <span class="text--point">[서식 &gt; 서식의뢰]</span>에서 가능해요.</p>
+                <p>* 최종 전자서식은 전자약정 담당자의 확인과 검수를 마쳐야 생성이 되요.</p>
+              </div>
+            </li>
+
+            <li class="accordion__list">
+              <button type="button" class="accordion__header" aria-expanded="true" aria-controls="content-2">
+                <span class="accordion__title">서식관리</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+              <div id="content-2" class="accordion__content">
+                <p>* 전자약정 처리가 필요한 모든 서식은 <span class="text--point">[서식등록]</span>부터 반드시 진행해주세요.</p>
+                <p>* [서식 &gt; 서식관리]에서 전자서식의 조회, 신규/수정 등의 업무를 처리할 수 있어요.</p>
+                <p>　· 조회 : 등록된 전자서식의 상태, 버전 등을 확인하거나, 특정 데이터를
+                  <br />　추가하여 'PDF문서'를 생성할 수 있어요.
+                </p>
+                <p>　· 신규/수정 : 새로운 전자서식을 등록하거나, 이미 등록된 전자서식을
+                  <br />　수정할 수 있으며, <span class="text--point">최소 2시간 이후부터 확인</span>할 수 있어요.
+                </p>
+              </div>
+            </li>
+
+            <li class="accordion__list">
+              <button type="button" class="accordion__header" aria-expanded="false" aria-controls="content-3">
+                <span class="accordion__title">통계</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+              <div id="content-3" class="accordion__content">
+                <p>* [통계] 메뉴의 각 수치는 <span class="text--point">전일자까지의</span> 집계수치입니다.</p>
+                <p>* [단계별 오류발생] : 약정처리 단계별 오류에 대한 집계결과를 확인할 수 있어요.</p>
+                <p>* [분야별 이용통계] : 전자약정처리시스템에 대한 이용현황을 각 분야별
+                  <br />(업무별, 채널별, 상품별, 서식별)로 조회할 수 있어요.
+                </p>
+                <p>* [부서별 서식의뢰] : 전자약정서식 생성/수정에 대한 부서별 이용현황을 조회할 수 있어요.</p>
+              </div>
+            </li>
+
+            <li class="accordion__list">
+              <button type="button" class="accordion__header" aria-expanded="false" aria-controls="content-4">
+                <span class="accordion__title">공통</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+              <div id="content-4" class="accordion__content">
+                <p>* <span class="text--point">SSO 시스템에 로그인이 안돼요!</span></p>
+                <p>　· 시스템 문제로 SSO 로그인이 안될 경우, FIDO방식* 로그인을 지원하고
+                  <br />　있어요.
+                  <br />　<em>FIDO 방식이란? IBK직원인증(MOTP) 앱을 통해 이용하시면 되요.
+                    <br />　　　　　　　<span class="text--secondary"> - 휴대폰 브라우저에서 입력 http://auth.ibk.co.kr -</span>
+                  </em>
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+        <!-- // dashboard__accordion -->
+
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="사이트 정보">
+      <div class="footer__copyright">&copy; 2026 BANK OF KOREA. All Rights Reserved.</div>
+      <address class="footer__contact" aria-label="회사 연락처">
+        서울시 중구 을지로 123 | Tel: 02-123-4567
+      </address>
+    </footer>
+
+  </div>
+
+  <script src="../js/ui.js"></script>
+</body>
+
+</html>

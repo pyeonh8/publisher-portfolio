@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+/*
+  Bank 은행 통합 관리자 센터
+
+  Main style
+*/
+
+/*main__header*/
+.main-content__header {
+  display: inline-block;
+  font-size: 26px;
+}
+
+.main-content__user-name {
+  font-size: 32px;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.dashboard__cards {
+  width: 58%;
+  height: 100%;
+}
+
+.dashboard-card {
+  margin-bottom: 25px;
+}
+
+.dashboard-card__title {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dashboard-card__list {
+  display: flex;
+  gap: 12px;
+}
+
+.dashboard-card__item {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 12px 10px;
+  border-radius: 6px;
+}
+
+.dashboard-card__title {
+  margin-bottom: 0;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.dashboard-card__date {
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.dashboard-card__info {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  text-align: right;
+}
+
+.dashboard-card__info-value {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.dashboard-card__info-value.under {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-position: under;
+}
+
+.dashboard-card__info button {
+  font-size: 14px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: var(--secondary-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dashboard-card__info-inquiry {
+  display: block;
+}
+
+.dashboard-card__info-inquiry:first-of-type {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.dashboard-card__info-inquiry:last-of-type {
+  font-size: 12px;
+}
+
+.dashboard-card--theme1 {
+  color: #ffffff;
+  background-color: var(--secondary-color);
+}
+
+.dashboard-card--theme2 {
+  color: #ffffff;
+  background-color: var(--primary-color);
+}
+
+.dashboard-card--theme3 {
+  color: var(--secondary-color);
+  background-color: #ffffff;
+  border: 2px solid var(--secondary-color);
+}
+
+.dashboard-card--theme3 .dashboard-card__title {
+  color: var(--secondary-color);
+}
+
+.dashboard-card--theme4 {
+  color: var(--secondary-color);
+  background-color: var(--bg-disabled);
+  border: 2px solid var(--border-color);
+}
+
+.dashboard-card--theme4 .dashboard-card__title {
+  color: var(--secondary-color);
+}
+
+.dashboard__accordion {
+  width: 41%;
+  margin-top: 23px;
+}
+
+.main-content {
+  margin-top: 180px;
+}
+
+.dashboard-card__label {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.text--point {
+  color: var(--success-color);
+}
+
+.text--secondary {
+  color: #557a9f;
+}

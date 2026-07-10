@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Bank 은행 통합 관리자 센터</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="../js/load/admin-header-top.js"></script>
+  <script src="../js/load/admin-header-bottom.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- 공통 헤더 (Web Component) -->
+    <header class="common-header" role="banner">
+      <admin-header-top></admin-header-top>
+      <admin-header-bottom></admin-header-bottom>
+    </header>
+
+    <main id="main-content" class="container max-width min-width">
+
+      <div class="page-header__inner">
+        <div class="page-header">
+          <nav class="breadcrumb" aria-label="현재 위치">
+            <ol class="breadcrumb__list">
+              <li class="breadcrumb__item">홈</li>
+              <li class="breadcrumb__item">약정</li>
+              <li class="breadcrumb__item" aria-current="page">조회</li>
+            </ol>
+          </nav>
+          <h2>조회</h2>
+        </div>
+      </div>
+
+      <!-- 검색 영역 -->
+      <div class="content">
+        <div class="board_box" role="search" aria-label="모니터링 검색">
+
+          <!-- 가이드 툴팁 : Perfect / Like -->
+          <div class="tooltip-wrap PFLK_guide">
+            <button type="button" class="tooltip__trigger tooltip__trigger--static" aria-describedby="pflk-guide-desc"
+              aria-label="입력조건 가이드"></button>
+            <div id="pflk-guide-desc" class="tooltip__desc" role="tooltip" hidden>
+              [입력조건에 대한 항목명 표시 구분 가이드]<br />
+              1) perfect 입력 : {항목명} <span class="tip_Perfect">。</span> → 조건 입력 모두 일치<br />
+              2) like 입력 : {항목명} <span class="tip_like">。</span> → 1글자 이상 입력
+            </div>
+          </div>
+
+          <table>
+            <caption class="a11y-hidden">모니터링 검색 조건</caption>
+            <colgroup>
+              <col style="width: 7%" />
+              <col style="width: 19%" />
+              <col style="width: 10%" />
+              <col style="width: 18%" />
+              <col style="width: 10%" />
+              <col style="width: 18%" />
+              <col style="width: 10%" />
+              <col style="width: 17%" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <label for="inp1_01">처리일자</label>
+                </th>
+                <td colspan="7">
+                  <span class="date">
+                    <input type="text" class="select_date input-ty" id="inp1_01" autocomplete="off"
+                      aria-label="처리일자 시작일" />
+                    ~
+                    <input type="text" class="select_date input-ty second" id="inp1_02" autocomplete="off"
+                      aria-label="처리일자 종료일" />
+                  </span>
+                  <span class="text--sub">(최대 3일 내역만 조회 가능)</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="inp_04">상태구분</label></th>
+                <td>
+                  <select id="inp_04">
+                    <option>전체</option>
+                    <option>정상</option>
+                    <option>오류</option>
+                  </select>
+                </td>
+                <th scope="row"><label for="inp_01">상품대상</label></th>
+                <td>
+                  <select id="inp_01">
+                    <option>전체</option>
+                    <option>개인</option>
+                    <option>기업</option>
+                  </select>
+                </td>
+                <th scope="row"><label for="inp_02">채널구분</label></th>
+                <td>
+                  <select id="inp_02">
+                    <option>전체</option>
+                    <option>인터넷</option>
+                    <option>스마트</option>
+                    <option>BOX</option>
+                    <option>소상공인</option>
+                  </select>
+                </td>
+                <th scope="row"><label for="inp_03">업무구분</label></th>
+                <td>
+                  <select id="inp_03">
+                    <option>전체</option>
+                    <option>여신</option>
+                    <option>외환</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="inp_08">현재단계</label></th>
+                <td>
+                  <select id="inp_08">
+                    <option>전체</option>
+                    <option>DATA</option>
+                    <option>HASH</option>
+                    <option>POST</option>
+                    <option>CONVERT</option>
+                    <option>SAVE</option>
+                  </select>
+                </td>
+                <th scope="row">
+                  <label for="inp_05">전산고객번호</label>
+                  <span class="tip_Perfect" aria-hidden="true">。</span>
+                </th>
+                <td>
+                  <span class="search_int">
+                    <input type="search" id="inp_05" placeholder="숫자만 입력" />
+                    <button type="button" aria-label="전산고객번호 검색">검색</button>
+                  </span>
+                </td>
+                <th scope="row">
+                  <label for="inp_06">고객계좌번호</label>
+                  <span class="tip_Perfect" aria-hidden="true">。</span>
+                </th>
+                <td>
+                  <span class="search_int">
+                    <input type="search" id="inp_06" placeholder="숫자만 입력" />
+                    <button type="button" aria-label="고객계좌번호 검색">검색</button>
+                  </span>
+                </td>
+                <th scope="row">
+                  <label for="inp_07">약정관리번호</label>
+                  <span class="tip_Perfect" aria-hidden="true">。</span>
+                </th>
+                <td class="search_td">
+                  <span class="search_int">
+                    <input type="search" id="inp_07" />
+                    <button type="button" aria-label="약정관리번호 검색">검색</button>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cont_btn ty_new">
+          <div class="right">
+            <select title="보기선택" aria-label="목록 보기 개수 선택">
+              <option>10건씩 보기</option>
+            </select>
+            <button type="button" class="btn3">초기화</button>
+            <button type="button" class="btn2">조회</button>
+          </div>
+        </div>
+      </div>
+      <!-- // 검색 영역 -->
+
+      <!-- 결과 영역 -->
+      <div class="content">
+        <div class="cont_box">
+          <!-- aria-live로 조회 결과 건수 변경 시 스크린리더에 알림 -->
+          <div class="board_search" aria-live="polite" aria-atomic="true">총 99 건</div>
+        </div>
+
+        <div class="board-ty colgroup">
+          <table>
+            <caption class="a11y-hidden">모니터링 검색결과</caption>
+            <colgroup>
+              <col style="width: 60px" />
+              <col style="width: 105px" />
+              <col style="width: 90px" />
+              <col style="width: 90px" />
+              <col style="width: 90px" />
+              <col style="width: 90px" />
+              <col />
+              <col />
+              <col />
+              <col style="width: 105px" />
+              <col style="width: 90px" />
+              <col style="width: 90px" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">처리일자</th>
+                <th scope="col">처리시간</th>
+                <th scope="col">상품대상</th>
+                <th scope="col">채널</th>
+                <th scope="col">업무</th>
+                <th scope="col">전산고객번호</th>
+                <th scope="col">고객계좌번호</th>
+                <th scope="col">약정관리번호</th>
+                <th scope="col">BPR IDX</th>
+                <th scope="col">현재단계</th>
+                <th scope="col">상태구분</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="12" class="emp">조회결과가 없습니다.</td>
+              </tr>
+
+              <tr>
+                <td>10</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>9999999999</td>
+                <td>0000000000</td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="0048-2849-1029-8472">
+                    0048-2849-1029-8472
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>DATA</td>
+                <td><span class="attn">오류</span></td>
+              </tr>
+
+              <tr>
+                <td>9</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>기업</td>
+                <td>스마트</td>
+                <td>외환</td>
+                <td>9999999999</td>
+                <td>0000000000</td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>HASH</td>
+                <td>정상</td>
+              </tr>
+
+              <tr>
+                <td>8</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>9999999999</td>
+                <td>0000000000</td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>POST</td>
+                <td>정상</td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>기업</td>
+                <td>스마트</td>
+                <td>외환</td>
+                <td>9999999999</td>
+                <td>0000000000</td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>CONVERT</td>
+                <td>정상</td>
+              </tr>
+
+              <tr>
+                <td>6</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>9999999999</td>
+                <td>0000000000</td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>SAVE</td>
+                <td>정상</td>
+              </tr>
+
+              <tr>
+                <td>5</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>기업</td>
+                <td>스마트</td>
+                <td>외환</td>
+                <td>9999999999</td>
+                <td>0000000000</td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>HASH</td>
+                <td>정상</td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>9999999999</td>
+                <td>0000000000</td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>POST</td>
+                <td>정상</td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>기업</td>
+                <td>스마트</td>
+                <td>외환</td>
+                <td>9999999999</td>
+                <td>0000000000</td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>HASH</td>
+                <td>정상</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>9999999999</td>
+                <td>0000000000</td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>POST</td>
+                <td>정상</td>
+              </tr>
+
+              <tr>
+                <td>1</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>기업</td>
+                <td>스마트</td>
+                <td>외환</td>
+                <td>9999999999</td>
+                <td>0000000000</td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="tooltip__trigger tooltip__trigger--dynamic"
+                    data-tooltip="202208290000008202208290000008202208290000008202208290000008">
+                    202208290000008202208290000008202208290000008202208290000008
+                  </button>
+                </td>
+                <td>HASH</td>
+                <td>정상</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- // 결과 영역 -->
+
+      <!-- 페이지네이션 -->
+      <nav class="paginate" aria-label="페이지 이동">
+        <ul class="paginate__list">
+          <li class="paginate__item">
+            <a href="#" class="paginate__prev" aria-label="이전 페이지">
+              <img src="../img/prev.png" alt="" aria-hidden="true" />이전
+            </a>
+          </li>
+          <li class="paginate__item"><a href="#" class="paginate__link on" aria-current="page" aria-label="1페이지">1</a>
+          </li>
+          <li class="paginate__item"><a href="#" class="paginate__link" aria-label="2페이지">2</a></li>
+          <li class="paginate__item"><a href="#" class="paginate__link" aria-label="3페이지">3</a></li>
+          <li class="paginate__item"><a href="#" class="paginate__link" aria-label="4페이지">4</a></li>
+          <li class="paginate__item"><a href="#" class="paginate__link" aria-label="5페이지">5</a></li>
+          <li class="paginate__item"><a href="#" class="paginate__link" aria-label="6페이지">6</a></li>
+          <li class="paginate__item"><a href="#" class="paginate__link" aria-label="7페이지">7</a></li>
+          <li class="paginate__item"><a href="#" class="paginate__link" aria-label="8페이지">8</a></li>
+          <li class="paginate__item"><a href="#" class="paginate__link" aria-label="9페이지">9</a></li>
+          <li class="paginate__item"><a href="#" class="paginate__link" aria-label="10페이지">10</a></li>
+          <li class="paginate__item">
+            <a href="#" class="paginate__next" aria-label="다음 페이지">
+              <img src="../img/next.png" alt="" aria-hidden="true" />다음
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </main>
+
+    <footer class="site-footer" aria-label="사이트 정보">
+      <div class="footer__copyright">&copy; 2026 BANK OF KOREA. All Rights Reserved.</div>
+      <address class="footer__contact" aria-label="회사 연락처">
+        서울시 중구 을지로 123 | Tel: 02-123-4567
+      </address>
+    </footer>
+
+  </div>
+
+  <script src="../js/ui.js"></script>
+</body>
+
+</html>

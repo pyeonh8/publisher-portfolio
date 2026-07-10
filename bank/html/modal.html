@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>공지사항 수정 :: Bank 은행 통합 관리자 센터</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <div class="wrap">
+    <dialog class="modal" aria-labelledby="modal-title" open>
+      <div class="modal__inner" style="height: 660px; width: 700px;">
+        <header class="modal__header">
+          <h1 id="modal-title">공지사항 수정</h1>
+          <button type="button" class="modal__close" aria-label="팝업 닫기">
+            <img src="../img/close.png" alt="" aria-hidden="true" />
+          </button>
+        </header>
+
+        <div class="modal__body">
+          <div class="modal__board modal__board--scroll">
+            <div class="board-ty">
+              <table class="table-col">
+                <caption class="a11y-hidden">공지사항 수정 입력 폼</caption>
+                <colgroup>
+                  <col style="width: 30px" />
+                  <col style="width: 80px" />
+                  <col style="width: 30px" />
+                  <col style="width: 80px" />
+                </colgroup>
+                <tbody>
+
+                  <tr>
+                    <th class="row" scope="row">작성자</th>
+                    <td colspan="3">김기업</td>
+                  </tr>
+
+                  <tr>
+                    <th class="row" scope="row">
+                      <label for="inp_02">구분
+                        <span aria-hidden="true">*</span>
+                      </label>
+                    </th>
+
+                    <td>
+                      <select id="inp_02" aria-required="true">
+                        <option selected>공지사항</option>
+                        <option>자료실</option>
+                      </select>
+                    </td>
+                    <th class="row">노출여부
+                    </th>
+                    <td>
+                      <fieldset class="radio-box">
+                        <legend class="row">노출여부</legend>
+                        <span class="radio-btn">
+                          <input type="radio" id="radio_on" name="expose_yn" value="Y" checked />
+                          <label for="radio_on">노출</label>
+                          <input type="radio" id="radio_off" name="expose_yn" value="N" />
+                          <label for="radio_off">미노출</label>
+                        </span>
+                      </fieldset>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th class="row" scope="row">
+                      <label for="inp_03">제목<span aria-hidden="true">*</span></label>
+                    </th>
+                    <td colspan="3">
+                      <input type="text" id="inp_03" class="input-ty input-full" value="공지사항 제목" aria-required="true" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th class="row" scope="row">
+                      <label for="inp_04">내용<span aria-hidden="true">*</span></label>
+                    </th>
+                    <td colspan="3">
+                      <textarea id="inp_04" class="input-full textarea-fixed textarea-fixed--lg" rows="8"
+                        aria-required="true">공지사항 내용</textarea>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th class="row" scope="row">
+                      <label>첨부파일</label>
+                    </th>
+                    <td colspan="3" data-attach-max="9" class="attach-file__box">
+                      <ul class="attach-file__list">
+                        <li class="attach-file__item attach-file__item--selected">
+                          <span class="file__name">일임형 ISA 반송체크리스트1.hwp</span>
+                          <button type="button" class="file__delete" aria-label="일임형 ISA 반송체크리스트.hwp 파일 삭제">
+                            <img src="../img/close_file.png" alt="" aria-hidden="true" />
+                          </button>
+
+                        </li>
+                        <li class="attach-file__item attach-file__item--selected">
+                          <span class="file__name">일임형 ISA 반송체크리스트2.hwp</span>
+                          <button type="button" class="file__delete" aria-label="일임형 ISA 반송체크리스트.hwp 파일 삭제">
+                            <img src="../img/close_file.png" alt="" aria-hidden="true" />
+                          </button>
+                        </li>
+                        <li class="attach-file__item attach-file__item--new">
+                          <label for="file_3" class="file__label btn2">파일선택</label>
+                          <input type="file" accept=".hwp, .pdf, .txt" id="file_3" class="a11y-hidden" />
+                          <span class="file__name file__name--empty" hidden>선택한 파일이 없음</span>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- // modal__board -->
+
+          <div class="modal__btn" role="group" aria-label="공지사항 수정 액션">
+            <div class="center">
+              <button type="submit" class="modal_btn btn2">수정</button>
+            </div>
+          </div>
+
+        </div>
+        <!-- // modal__body -->
+
+      </div>
+      <!-- // modal__inner -->
+    </dialog>
+
+  </div>
+
+  <script src="../js/ui.js"></script>
+</body>
+
+</html>
