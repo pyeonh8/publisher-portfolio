@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>샐러디 홈페이지 리뉴얼 | 박연희 포트폴리오</title>
+  <style>
+    :root {
+      --col-bg: #ffffff;
+      --col-surface: #f5f5f5;
+      --col-point: #2b2b2b;
+      --col-accent: #555555;
+      --col-muted: #999999;
+      --col-border: #e0e0e0;
+      --col-green: #17633D;
+      --ff-base: 'Noto Sans KR', sans-serif;
+      --max-w: 860px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--col-bg);
+      color: var(--col-point);
+      font-family: var(--ff-base);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .l-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* 헤더 */
+    .page-header {
+      padding: 48px 0 40px;
+      border-bottom: 1px solid var(--col-border);
+    }
+
+    .page-header__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--col-muted);
+      margin-bottom: 24px;
+      transition: color 0.2s;
+    }
+
+    .page-header__back:hover {
+      color: var(--col-point);
+    }
+
+    .page-header__label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--col-muted);
+      margin-bottom: 12px;
+    }
+
+    .page-header__title {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .page-header__desc {
+      font-size: 15px;
+      color: var(--col-accent);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    /* 프로젝트 정보 */
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--col-border);
+    }
+
+    .project-meta__label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--col-muted);
+      margin-bottom: 6px;
+    }
+
+    .project-meta__value {
+      font-size: 14px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 500;
+      background: #efefef;
+      color: var(--col-accent);
+      border-radius: 100px;
+    }
+
+    .tag--green {
+      background: #e8f5ee;
+      color: var(--col-green);
+    }
+
+    /* 개선 포인트 */
+    .improve-section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--col-border);
+    }
+
+    .improve-section__title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--col-muted);
+      margin-bottom: 20px;
+    }
+
+    .improve-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .improve-item {
+      padding: 16px;
+      background: var(--col-surface);
+      border-radius: 4px;
+    }
+
+    .improve-item__title {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .improve-item__desc {
+      font-size: 12px;
+      color: var(--col-accent);
+      line-height: 1.6;
+    }
+
+    /* 페이지 목록 */
+    .pages-section {
+      padding: 40px 0;
+    }
+
+    .pages-section__title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--col-muted);
+      margin-bottom: 20px;
+    }
+
+    .page-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--col-border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .page-card:hover {
+      border-color: var(--col-green);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .page-card__thumb {
+      aspect-ratio: 16/10;
+      background: var(--col-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--col-muted);
+      border-bottom: 1px solid var(--col-border);
+    }
+
+    .page-card__body {
+      padding: 14px;
+    }
+
+    .page-card__name {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .page-card__desc {
+      font-size: 12px;
+      color: var(--col-accent);
+      line-height: 1.5;
+    }
+
+    /* 푸터 */
+    .page-footer {
+      border-top: 1px solid var(--col-border);
+      padding: 24px 0;
+    }
+
+    .page-footer__inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .page-footer__back {
+      font-size: 13px;
+      color: var(--col-accent);
+      border-bottom: 1px solid var(--col-border);
+      padding-bottom: 1px;
+      transition: color 0.2s;
+    }
+
+    .page-footer__back:hover {
+      color: var(--col-point);
+    }
+
+    .page-footer__copy {
+      font-size: 12px;
+      color: var(--col-muted);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--col-point);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main id="main-content">
+    <div class="l-wrap">
+
+      <header class="page-header">
+        <a href="../index.html" class="page-header__back" aria-label="포트폴리오 메인으로 돌아가기">← 포트폴리오로 돌아가기</a>
+        <p class="page-header__label">Publishing Work · Renewal</p>
+        <h1 class="page-header__title">샐러디<br />홈페이지 리뉴얼</h1>
+        <p class="page-header__desc">
+          2023년 제작한 샐러디 홈페이지를 리뉴얼한 작업물. <br>
+          jQuery·Slick 제거, BEM 적용, 접근성 개선에 집중했습니다.
+        </p>
+      </header>
+
+      <!-- 프로젝트 정보 -->
+      <section class="project-meta" aria-label="프로젝트 정보">
+        <div class="project-meta__item">
+          <p class="project-meta__label">유형</p>
+          <p class="project-meta__value">개인 리뉴얼 작업</p>
+        </div>
+        <div class="project-meta__item">
+          <p class="project-meta__label">역할</p>
+          <p class="project-meta__value">기획 · 디자인 · 퍼블리싱</p>
+        </div>
+        <div class="project-meta__item">
+          <p class="project-meta__label">기술 스택</p>
+          <ul class="tag-list" aria-label="사용 기술">
+            <li><span class="tag">HTML</span></li>
+            <li><span class="tag">CSS</span></li>
+            <li><span class="tag">JavaScript</span></li>
+            <li><span class="tag">BEM</span></li>
+            <li><span class="tag">WAI-ARIA</span></li>
+            <li><span class="tag">반응형</span></li>
+            <li><span class="tag--green tag">jQuery 제거</span></li>
+            <li><span class="tag--green tag">SLICK 제거</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 개선 포인트 -->
+      <section class="improve-section" aria-label="주요 개선 내용">
+        <p class="improve-section__title">Key Improvements</p>
+        <ul class="improve-list">
+          <li class="improve-item">
+            <p class="improve-item__title">jQuery → 바닐라 JS</p>
+            <p class="improve-item__desc">jQuery 의존성 완전 제거, 바닐라 JS로 전환</p>
+          </li>
+          <li class="improve-item">
+            <p class="improve-item__title">SLICK → 바닐라 슬라이더</p>
+            <!-- <p class="improve-item__desc">플러그인 제거, 터치 스와이프 포함 직접 구현</p> -->
+            <p class="improve-item__desc">플러그인 제거</p>
+          </li>
+          <li class="improve-item">
+            <p class="improve-item__title">BEM 방법론 적용</p>
+            <p class="improve-item__desc">혼재된 클래스명을 BEM으로 전면 정리</p>
+          </li>
+          <li class="improve-item">
+            <p class="improve-item__title">CSS 변수 도입</p>
+            <p class="improve-item__desc">브랜드 컬러 및 공통 값을 CSS 토큰으로 관리</p>
+          </li>
+          <li class="improve-item">
+            <p class="improve-item__title">시맨틱 마크업</p>
+            <p class="improve-item__desc">헤딩 순서 정리, nav/section/address 등 적용</p>
+          </li>
+          <li class="improve-item">
+            <p class="improve-item__title">접근성 개선</p>
+            <p class="improve-item__desc">aria-label, aria-expanded, 키보드 접근, ESC 닫기</p>
+          </li>
+          <li class="improve-item">
+            <p class="improve-item__title">float → Flexbox/Grid</p>
+            <p class="improve-item__desc">레거시 float 레이아웃을 현대적 방식으로 교체</p>
+          </li>
+          <li class="improve-item">
+            <p class="improve-item__title">고정 px → 유동 단위</p>
+            <p class="improve-item__desc">하드코딩된 고정 너비를 유동적 레이아웃으로 개선</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 페이지 목록 -->
+      <section class="pages-section" aria-label="페이지 목록">
+        <p class="pages-section__title">Pages</p>
+        <a href="salady-main.html" class="page-card" aria-label="샐러디 홈페이지 보기" target="_blank">
+          <div class="page-card__thumb" aria-hidden="true">thumbnail</div>
+          <div class="page-card__body">
+            <p class="page-card__name">샐러디 홈페이지</p>
+            <p class="page-card__desc">히어로 슬라이더, 메뉴 네비, 베스트 메뉴, 영양 가이드, 반응형</p>
+          </div>
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="page-footer" role="contentinfo">
+    <div class="page-footer__inner">
+      <a href="../index.html" class="page-footer__back">← 포트폴리오로 돌아가기</a>
+      <p class="page-footer__copy">© 2026 박연희</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
