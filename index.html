@@ -330,6 +330,11 @@
       opacity: 0.6;
     }
 
+    .project-card__link-box {
+      display: flex;
+      gap: 16px;
+    }
+
     /* 연락처 */
     .contact__inner {
       display: flex;
@@ -688,7 +693,12 @@
                 <li><span class="tag">BEM</span></li>
                 <li><span class="tag">반응형</span></li>
               </ul>
-              <a href="./salady/salady-index.html" class="project-card__link">작업물 보기 →</a>
+              <div class="project-card__link-box">
+                <a href="./salady/salady-index.html" class="project-card__link">작업물 보기 →</a>
+                <a href="https://github.com/pyeonh8/salady-refactoring" target="_blank"
+                  class="project-card__link">GitHub
+                  →</a>
+              </div>
             </div>
           </article>
         </li>
