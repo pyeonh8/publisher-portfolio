@@ -220,6 +220,13 @@
       border-bottom: 1px solid var(--col-border);
     }
 
+    .page-card__thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .page-card__body {
       padding: 14px;
     }
@@ -359,7 +366,9 @@
       <section class="pages-section" aria-label="페이지 목록">
         <p class="pages-section__title">Pages</p>
         <a href="salady-main.html" class="page-card" aria-label="샐러디 홈페이지 보기" target="_blank">
-          <div class="page-card__thumb" aria-hidden="true">thumbnail</div>
+          <div class="page-card__thumb" aria-hidden="true">
+            <img src="../../image/thumb_salady_main.jpg" alt="팝업(모달) 페이지 화면" />
+          </div>
           <div class="page-card__body">
             <p class="page-card__name">샐러디 홈페이지</p>
             <p class="page-card__desc">히어로 슬라이더, 메뉴 네비, 베스트 메뉴, 영양 가이드, 반응형</p>
