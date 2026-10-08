@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Zen+Antique&display=swap");
+
+/* 
+
+  샐러디 COMMON STYLE 
+
+*/
+
+:root {
+  --col-green: #17633d;
+  --col-green-dark: #0f4229;
+  --col-green-light: #6ba78a;
+  --col-bg: #ffffff;
+  --col-surface: #f9f9f9;
+  --col-border: #eeeeee;
+  --col-text: #333333;
+  --col-text-sub: #888888;
+  --col-footer: #333333;
+
+  --ff-serif: "Playfair Display", Georgia, serif;
+  --ff-sans: "Noto Sans KR", sans-serif;
+
+  --header-h: 95px;
+  --max-w: 1280px;
+  --sp-sm: 8px;
+  --sp-md: 16px;
+  --sp-lg: 32px;
+  --sp-xl: 64px;
+  --radius: 10px;
+  --transition: 0.3s ease;
+}
+
+/* 접근성 */
+.a11y-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+:focus-visible {
+  outline: 2px solid var(--col-green);
+  outline-offset: 3px;
+}
+
+/* 레이아웃 */
+.l-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--sp-lg);
+}

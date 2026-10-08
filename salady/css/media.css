@@ -1,0 +1,179 @@
+/* 
+
+  샐러디 MEDIA STYLE
+
+*/
+
+@media (max-width: 1424px) {
+  .nutrition__list {
+    margin-top: calc(-1 * var(--sp-lg));
+  }
+
+  .best-menu__title-area {
+    width: 420px;
+  }
+
+  .guide__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .banner {
+    display: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .gnb__list {
+    display: none;
+  }
+
+  .gnb__toggle {
+    display: flex;
+  }
+
+  .gnb__list.is-open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 220px;
+    height: 100vh;
+    background: #fff;
+    z-index: 99999;
+    padding: calc(var(--header-h) + var(--sp-lg)) var(--sp-lg) var(--sp-lg);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    gap: var(--sp-lg);
+    overflow-y: auto;
+  }
+
+  .gnb__item a {
+    font-size: 18px;
+  }
+
+  .best-menu__title-area {
+    width: 320px;
+  }
+
+  .best-menu__heading {
+    font-size: 56px;
+  }
+
+  :root {
+    --header-h: 80px;
+  }
+
+  .site-header__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+@media (max-width: 899px) {
+  :root {
+    --header-h: 60px;
+  }
+
+  .hero {
+    display: none;
+  }
+
+  .hero__mobile {
+    display: block;
+    margin-top: var(--header-h);
+  }
+
+  .nutrition__list {
+    flex-direction: column;
+  }
+
+  .nutrition__item {
+    border-right: none;
+    border-bottom: 3px solid var(--col-border);
+  }
+
+  .nutrition__item:last-child {
+    border-bottom: none;
+  }
+
+  .menu-nav__list {
+    gap: var(--sp-sm);
+  }
+
+  .menu-nav__item a {
+    width: 60px;
+    height: 240px;
+  }
+
+  .menu-nav__item a:hover {
+    width: 185px;
+  }
+
+  .menu-nav__icon {
+    left: 11px;
+  }
+
+  .best-menu {
+    flex-direction: column;
+  }
+
+  .best-menu__title-area {
+    width: 100%;
+    min-height: 160px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sp-lg);
+    padding: var(--sp-lg);
+  }
+
+  .best-menu__heading {
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+
+  .best-menu__more {
+    display: none;
+  }
+
+  .best-menu__card-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .guide__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .menu-section__heading {
+    font-size: 24px;
+  }
+
+  .menu-nav__list {
+    display: none;
+  }
+
+  .guide__list {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__sns {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

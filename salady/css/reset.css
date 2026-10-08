@@ -1,0 +1,53 @@
+/* 
+
+  샐러디 RESET STYLE
+
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* 부드러운 스크롤 */
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--col-bg);
+  color: var(--col-text);
+  font-family: var(--ff-sans);
+  font-size: 14px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  background: transparent;
+  border: none;
+}
