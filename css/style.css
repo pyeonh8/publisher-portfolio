@@ -1,0 +1,4 @@
+/* 불러오는 순서: 변수 → 기본 → 섹션 */
+@import url("./tokens.css");
+@import url("./base.css");
+@import url("./main.css");

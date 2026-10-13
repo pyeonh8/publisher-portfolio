@@ -1,0 +1,71 @@
+/* =========================================
+   디자인 토큰
+   모바일 값이 기본, 1024px 이상에서 크기만 PC 값으로 덮어씀
+   ========================================= */
+:root {
+  /* 배경·면·선 */
+  --color-bg: #111318;
+  --color-surface: #161920;     /* 소개 섹션 배경 */
+  --color-surface-2: #1e222b;   /* 카드, 자리 표시 */
+  --color-line: #2a2e38;
+  --color-line-strong: #3a3f4b; /* 버튼·알약 테두리 */
+
+  /* 글자 */
+  --color-text: #f3f1ec;
+  --color-text-sub: #c9cdd5;
+  --color-text-muted: #a9aeb9;
+  --color-text-label: #8c92a0;  /* 날짜, 라벨 */
+
+  /* 포인트 */
+  --color-point: #f2c14e;       /* 연필 노랑. 위 글자는 --color-bg */
+  --color-point-hover: #f7d684;
+
+  /* 폰트 */
+  --font-display: "Gothic A1", sans-serif;
+  --font-body: "IBM Plex Sans KR", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  /* 글자 크기 */
+  --fs-display: 40px;
+  --fs-h2: 30px;
+  --fs-h3: 26px;
+  --fs-body-lg: 17px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --fs-label: 13px;
+
+  /* 간격 */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+
+  /* 레이아웃 */
+  --container: 1200px;
+  --gutter: 20px;
+  --section-y: 72px;
+
+  /* 모서리 */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  /* 컨트롤 높이 */
+  --control-lg: 52px;
+  --control-md: 44px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --fs-display: 72px;
+    --fs-h2: 40px;
+    --fs-h3: 32px;
+    --gutter: 24px;
+    --section-y: 120px;
+  }
+}
