@@ -458,6 +458,15 @@
     display: block;
     flex: 1.5;
     min-width: 0;
+    animation: heroIllust 1s steps(1) infinite;
+  }
+
+  .hero__illust img {
+    transition: 0.3s ease;
+  }
+
+  .hero__illust img:hover {
+    transform: translateY(-25px);
   }
 
   .about__inner {
@@ -491,5 +500,15 @@
     grid-template-areas:
       "title desc stack"
       "title desc links";
+  }
+}
+
+@keyframes heroIllust {
+  0%,
+  100% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
   }
 }
