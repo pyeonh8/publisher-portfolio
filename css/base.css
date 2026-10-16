@@ -44,6 +44,11 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2 {
+  font-family: var(--font-display);
+}
+
 /* 포커스: 어두운 배경에서도 보이게 포인트 색 */
 :focus-visible {
   outline: 3px solid var(--color-point);
