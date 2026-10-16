@@ -9,11 +9,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 56px;
   min-height: var(--control-lg);
-  padding: 0 28px;
+  padding: 0 var(--space-32);
   border-radius: var(--radius-pill);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .btn--solid {
@@ -26,43 +25,43 @@
 }
 
 .section-label {
+  font-family: var(--font-mono);
   font-size: var(--fs-label);
-  color: var(--color-point);
-  margin-bottom: 12px;
   letter-spacing: 0.14em;
+  margin-bottom: var(--space-12);
+  color: var(--color-point);
 }
 
 .section-title {
   font-size: var(--fs-h2);
   line-height: 1.3;
-  margin-bottom: 24px;
+  margin-bottom: var(--space-24);
 }
 
 .about__desc {
   color: var(--color-text-sub);
-  margin-bottom: 48px;
+  margin-bottom: var(--space-48);
 }
 
 /* 헤더 ------------------------------------ */
 
 .site-header {
-  height: 85px;
+  padding: var(--space-12) 0;
   border-bottom: 1px solid var(--color-line);
 }
 
 .site-header__inner {
-  height: inherit;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  gap: 8px;
+  gap: var(--space-8);
 }
 
 .site-header__logo {
   position: relative;
-  font-weight: bold;
-  padding-left: 18px;
+  font-weight: 600;
+  padding-left: var(--space-16);
 }
 
 .site-header__logo::after {
@@ -71,23 +70,21 @@
   top: 50%;
   left: 0;
   transform: translate(0%, -50%);
-  width: 10px;
-  height: 10px;
+  width: var(--space-8);
+  height: var(--space-8);
   border-radius: var(--radius-pill);
   background-color: var(--color-point);
 }
 
 .site-nav__list {
   display: flex;
-  gap: 24px;
+  gap: var(--space-24);
 }
 
 /* 히어로 ---------------------------------- */
 
 .hero {
-  /* display: flex; */
   margin: var(--section-y) auto;
-  /* gap: 0px; */
 }
 
 .hero__illust {
@@ -95,9 +92,10 @@
 }
 
 .hero__eyebrow {
-  font-size: var(--fs-body);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
   color: var(--color-point);
-  margin-bottom: 24px;
+  margin-bottom: var(--space-24);
 }
 
 .hero__title {
@@ -108,18 +106,19 @@
 
 .hero__point {
   color: var(--color-point);
+  font-style: normal;
   text-decoration: underline;
   text-decoration-thickness: 3px;
-  text-underline-offset: 18px;
+  text-underline-offset: var(--space-16);
 }
 
 .hero__desc {
-  margin: 28px 0 40px;
+  margin: var(--space-32) 0 var(--space-48);
 }
 
 .hero__links {
   display: flex;
-  gap: 12px;
+  gap: var(--space-12);
 }
 
 /* 키워드 띠 ------------------------------- */
@@ -127,14 +126,14 @@
 .keywords {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: var(--space-16);
   margin: var(--section-y) auto;
   overflow: hidden;
 }
 
 .keywords__row {
   display: flex;
-  gap: 14px;
+  gap: var(--space-12);
 }
 
 .keyword {
@@ -143,7 +142,7 @@
   justify-content: center;
   flex-shrink: 0;
   white-space: nowrap;
-  padding: 12px 26px;
+  padding: var(--space-12) var(--space-24);
   border-radius: var(--radius-pill);
 }
 
@@ -161,7 +160,8 @@
 .about {
   padding: var(--section-y) 0;
   background-color: var(--color-surface);
-  border: 1px solid var(--color-line-strong);
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
 }
 
 .about__illust {
@@ -171,13 +171,13 @@
 .about__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  column-gap: 48px;
+  column-gap: var(--space-48);
 }
 
 .about__heading {
   font-size: var(--fs-small);
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-16);
   color: var(--color-text-muted);
 }
 
@@ -209,18 +209,18 @@
   font-family: var(--font-mono);
   font-size: var(--fs-label);
   color: var(--color-text-label);
-  margin-left: 8px;
+  margin-left: var(--space-8);
   font-weight: 400;
 }
 
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: var(--space-12);
 }
 
 .skill-tags__item {
-  padding: 6px 14px;
+  padding: var(--space-8) var(--space-12);
   border: 1px solid var(--color-line-strong);
   border-radius: var(--radius-pill);
   font-size: var(--fs-label);
@@ -229,23 +229,20 @@
 /* 작업물 ---------------------------------- */
 
 .works {
-  margin: var(--section-y);
+  margin: var(--section-y) auto;
 }
 
 .section-intro {
   color: var(--color-text-muted);
-  margin-bottom: 48px;
-}
-
-.work-list li {
-  margin-bottom: 64px;
+  margin-bottom: var(--space-48);
 }
 
 .work {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 48px;
+  gap: var(--space-48);
+  margin-bottom: var(--space-64);
 }
 
 .work__media {
@@ -254,6 +251,7 @@
 
 .work__body {
   flex: 1 1 400px;
+  min-width: 0;
 }
 
 .work__media img {
@@ -267,19 +265,17 @@
   font-family: var(--font-mono);
   font-size: var(--fs-label);
   color: var(--color-point);
-  margin-bottom: 8px;
+  margin-bottom: var(--space-8);
 }
 
 .work__title {
   font-size: var(--fs-h3);
-  margin-bottom: 20px;
+  margin-bottom: var(--space-24);
 }
 
 .work__info {
   display: grid;
-  grid-template-columns: 88px 1fr;
-  gap: var(--space-12) var(--space-16);
-  margin-bottom: 28px;
+  margin-bottom: var(--space-32);
 }
 
 .work__info dt {
@@ -287,18 +283,21 @@
   font-family: var(--font-mono);
   font-size: var(--fs-label);
 }
+
 .work__info dd {
   color: var(--color-text-sub);
+  margin-bottom: var(--space-8);
 }
 
 .work__links {
   display: flex;
-  gap: 10px;
+  gap: var(--space-8);
+  flex-wrap: wrap;
 }
 
 .work__links .btn {
-  min-height: 44px;
-  padding: 14px 20px;
+  min-height: var(--control-md);
+  padding: var(--space-12) var(--space-24);
 }
 
 /* 학습 프로젝트 ---------------------------- */
@@ -309,7 +308,7 @@
 
 @media (min-width: 768px) {
   .site-header {
-    height: 68px;
+    padding: var(--space-24) 0;
   }
 
   .site-header__inner {
@@ -318,32 +317,39 @@
     align-items: center;
     gap: 0;
   }
+
+  .work__info {
+    grid-template-columns: 88px 1fr;
+    gap: var(--space-12) var(--space-16);
+    margin-bottom: var(--space-24);
+  }
+
+  .work__info dd {
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: 1024px) {
   .hero {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: var(--space-24);
   }
 
   .hero__text {
     flex: 2;
+    min-width: 0;
   }
 
   .hero__illust {
     display: block;
     flex: 1.5;
-  }
-
-  .hero > div {
     min-width: 0;
   }
 
   .about__inner {
     display: flex;
-    /* align-items: center; */
-    gap: 25px;
+    gap: var(--space-24);
   }
 
   .about__body {
@@ -356,11 +362,11 @@
   }
 
   .section-intro {
-    margin-bottom: 80px;
+    margin-bottom: var(--space-80);
   }
 
-  .work-list li {
-    margin-bottom: 96px;
+  .work {
+    margin-bottom: var(--space-96);
   }
 
   .work--reverse {
