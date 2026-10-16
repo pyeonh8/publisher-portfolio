@@ -60,28 +60,33 @@
     </section>
 
     <!-- 키워드 띠 (2단계에서 두 줄이 반대 방향으로 흐르게) -->
-    <section class="keywords" aria-label="하는 일과 쓰는 도구">
-      <ul class="keywords__row keywords__row--roles" aria-label="하는 일">
-        <li class="keyword keyword--solid">디자인 → 반영</li>
-        <li class="keyword keyword--solid">웹 퍼블리싱</li>
-        <li class="keyword keyword--solid">웹 접근성</li>
-        <li class="keyword keyword--solid">반응형</li>
-        <li class="keyword keyword--solid">유지보수</li>
-        <li class="keyword keyword--solid">배너 · 팝업 디자인</li>
-        <li class="keyword keyword--solid">공통 컴포넌트</li>
-      </ul>
-      <ul class="keywords__row keywords__row--tools" aria-label="쓰는 도구">
-        <!-- 아이콘: 공식 SVG를 img로 넣고 alt="" (글자가 이름을 알려 줌) -->
-        <li class="keyword keyword--outline">HTML</li>
-        <li class="keyword keyword--outline">CSS</li>
-        <li class="keyword keyword--outline">JavaScript</li>
-        <li class="keyword keyword--outline">jQuery</li>
-        <li class="keyword keyword--outline">Figma</li>
-        <li class="keyword keyword--outline">Photoshop</li>
-        <li class="keyword keyword--outline">Git</li>
-        <li class="keyword keyword--outline">React</li>
-        <li class="keyword keyword--outline">GSAP</li>
-      </ul>
+    <section class="keywords" aria-label="하는 일과 쓰는 도구" data-paused="false">
+      <div class="keywords__inner">
+        <ul class="keywords__row keywords__row--roles" aria-label="하는 일">
+          <li class="keyword keyword--solid">디자인 → 반영</li>
+          <li class="keyword keyword--solid">웹 퍼블리싱</li>
+          <li class="keyword keyword--solid">웹 접근성</li>
+          <li class="keyword keyword--solid">반응형</li>
+          <li class="keyword keyword--solid">유지보수</li>
+          <li class="keyword keyword--solid">배너 · 팝업 디자인</li>
+          <li class="keyword keyword--solid">공통 컴포넌트</li>
+        </ul>
+      </div>
+      <div class="keywords__inner keywords__inner--reverse">
+        <ul class="keywords__row keywords__row--tools" aria-label="쓰는 도구">
+          <!-- 아이콘: 공식 SVG를 img로 넣고 alt="" (글자가 이름을 알려 줌) -->
+          <li class="keyword keyword--outline">HTML</li>
+          <li class="keyword keyword--outline">CSS</li>
+          <li class="keyword keyword--outline">JavaScript</li>
+          <li class="keyword keyword--outline">jQuery</li>
+          <li class="keyword keyword--outline">Figma</li>
+          <li class="keyword keyword--outline">Photoshop</li>
+          <li class="keyword keyword--outline">Git</li>
+          <li class="keyword keyword--outline">React</li>
+          <li class="keyword keyword--outline">GSAP</li>
+        </ul>
+      </div>
+      <button class="keywords__btn" type="button" aria-pressed="false" aria-label="키워드 띠 일시정지"></button>
     </section>
 
     <!-- 소개 -->

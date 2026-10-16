@@ -130,9 +130,28 @@
   overflow: hidden;
 }
 
+.keywords__inner {
+  display: flex;
+  width: max-content;
+  animation: keywords 60s linear infinite;
+}
+
+.keywords__inner--reverse {
+  animation-direction: reverse;
+}
+
+.keywords__inner:hover {
+  animation-play-state: paused;
+}
+
+.keywords[data-paused="true"] .keywords__inner {
+  animation-play-state: paused;
+}
+
 .keywords__row {
   display: flex;
   gap: var(--space-12);
+  margin-right: var(--space-12);
 }
 
 .keyword {
@@ -143,6 +162,7 @@
   white-space: nowrap;
   padding: var(--space-12) var(--space-24);
   border-radius: var(--radius-pill);
+  font-weight: 600;
 }
 
 .keyword--solid {
@@ -152,6 +172,23 @@
 
 .keyword--outline {
   border: 1px solid var(--color-line-strong);
+}
+
+.keywords__btn {
+  margin: 0 var(--gutter);
+  width: var(--control-md);
+  height: var(--control-md);
+  background-color: var(--color-bg);
+  background-image: url(../image/icon-pause.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+.keywords[data-paused="true"] .keywords__btn {
+  background-image: url(../image/icon-play.svg);
 }
 
 /* 소개 ------------------------------------ */
@@ -510,5 +547,14 @@
   }
   50% {
     transform: rotate(-3deg);
+  }
+}
+
+@keyframes keywords {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
