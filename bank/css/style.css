@@ -11,5 +11,3 @@
 @import "template.css";
 @import "page/login.css";
 @import "page/main.css";
-@import "vendor/jquery-ui.css";
-@import "vendor/jquery.timepicker.css";

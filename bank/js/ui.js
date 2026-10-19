@@ -1,28 +1,4 @@
 // ==============================================
-// GNB 메뉴
-// ==============================================
-const initGnb = () => {
-  const gnb = document.querySelector(".gnb");
-  if (!gnb) return;
-
-  gnb.addEventListener("mouseenter", () => gnb.classList.add("is-open"));
-  gnb.addEventListener("mouseleave", () => gnb.classList.remove("is-open"));
-};
-
-// ==============================================
-// 메인보드 아코디언 높이 동기화
-// ==============================================
-const syncHeight = () => {
-  const sourceElement = document.querySelector(".dashboard__cards");
-  const targetElement = document.querySelector(".accordion");
-
-  if (sourceElement && targetElement) {
-    const height = sourceElement.offsetHeight;
-    targetElement.style.height = `${height - 47}px`;
-  }
-};
-
-// ==============================================
 // 아코디언 열기/닫기
 // ==============================================
 const initAccordion = () => {
@@ -68,6 +44,20 @@ const initLoginRadio = () => {
         passwordInput.value = "";
       }
     });
+  });
+};
+
+// ==============================================
+// 로그인 - 포트폴리오용 이동
+// 정적 사이트라 서버로 보내지 않고 메인으로 이동 (입력값이 주소창에 남지 않게)
+// ==============================================
+const initLoginSubmit = () => {
+  const form = document.querySelector(".login__form");
+  if (!form) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    window.location.href = form.getAttribute("action");
   });
 };
 
@@ -157,8 +147,6 @@ const initAttachFile = () => {
   // --------------------------------------------
   // 첨부파일 삭제
   // --------------------------------------------
-  const attachFileDelete = attachFileList.querySelectorAll(".file__delete");
-
   attachFileList.addEventListener("click", (e) => {
     if (e.target.closest(".file__delete")) {
       e.target.closest(".attach-file__item").remove();
@@ -179,11 +167,15 @@ const initAttachFile = () => {
     const newItem = document.createElement("li");
     newItem.className = "attach-file__item attach-file__item--selected";
     newItem.innerHTML = `
-      <span class="file__name">${file.name}</span>
-      <button type="button" class="file__delete" aria-label="${file.name} 파일 삭제">
-        <img src="../img/close_file.png" alt="" aria-hidden="true" />
+      <svg class="file__icon" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+      <span class="file__name"></span>
+      <button type="button" class="file__delete">
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
       </button>
     `;
+    // 파일 이름은 textContent로 넣어 HTML로 해석되지 않게
+    newItem.querySelector(".file__name").textContent = file.name;
+    newItem.querySelector(".file__delete").setAttribute("aria-label", `${file.name} 삭제`);
 
     attachFileList.insertBefore(newItem, newAttachFile.closest(".attach-file__item--new"));
 
@@ -199,11 +191,7 @@ const initAttachFile = () => {
     const selectedItem = attachFileList.querySelectorAll(".attach-file__item--selected");
     const emptyMsg = attachFileList.querySelector(".file__name--empty");
 
-    if (selectedItem.length === 0) {
-      emptyMsg.style.display = "block";
-    } else {
-      emptyMsg.style.display = "none";
-    }
+    emptyMsg.hidden = selectedItem.length > 0;
   };
 };
 
@@ -211,11 +199,10 @@ const initAttachFile = () => {
 // 초기화
 // ==============================================
 document.addEventListener("DOMContentLoaded", () => {
-  initGnb();
   initAccordion();
   initLoginRadio();
+  initLoginSubmit();
   initTooltip();
   initAttachFile();
 });
 
-window.addEventListener("load", syncHeight);

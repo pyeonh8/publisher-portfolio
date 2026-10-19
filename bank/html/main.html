@@ -3,213 +3,222 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
-  <title>Bank 은행 통합 관리자 센터</title>
+  <title>메인 | Bank 은행 통합 관리자 센터</title>
   <link rel="stylesheet" href="../css/style.css" />
-  <script src="../js/load/admin-header-top.js"></script>
-  <script src="../js/load/admin-header-bottom.js"></script>
+  <script src="../js/load/admin-header.js"></script>
 </head>
 
-<body>
+<body class="min-width">
   <div class="wrap">
 
     <!-- 공통 헤더 (Web Component) -->
-    <header class="common-header" role="banner">
-      <admin-header-top></admin-header-top>
-      <admin-header-bottom></admin-header-bottom>
+    <header class="common-header">
+      <admin-header></admin-header>
     </header>
 
-    <main id="main-content" class="main-content container max-width min-width">
+    <main id="main-content" class="main-content container max-width">
 
       <div class="main-content__header">
-        <h2 class="main-content__title">
-          <span class="main-content__user-name">김관리</span> 님, 안녕하세요!
-        </h2>
+        <div>
+          <h1 class="main-content__title">김관리 님, 안녕하세요!</h1>
+          <p class="main-content__sub">최근 로그인 2022-09-01 09:08:51</p>
+        </div>
+        <p class="main-content__date">2022.12.12 기준</p>
       </div>
 
-      <!-- 대시보드 섹션 -->
-      <section class="dashboard" aria-label="대시보드">
+      <div class="dashboard">
 
         <!-- 카드 영역 -->
         <div class="dashboard__cards">
 
-          <article class="dashboard-card" aria-label="오늘의 현황">
-            <h3 class="dashboard-card__title">TODAY</h3>
-            <div class="dashboard-card__list">
-
-              <div class="dashboard-card__item dashboard-card--theme1">
-                <h4 class="dashboard-card__label">총 처리건수</h4>
-                <span class="dashboard-card__date">(2022.12.11)</span>
-                <div class="dashboard-card__info">
-                  <span class="dashboard-card__info-value">100,798</span>건
+          <section class="dashboard-card" aria-labelledby="today-title">
+            <h2 class="dashboard-card__title" id="today-title">오늘의 현황</h2>
+            <ul class="dashboard-card__list">
+              <li>
+                <div class="dashboard-card__item dashboard-card__item--highlight">
+                  <h3 class="dashboard-card__label">총 처리건수</h3>
+                  <p class="dashboard-card__value">100,798<span class="dashboard-card__unit">건</span></p>
+                  <p class="dashboard-card__meta">2022.12.11 기준</p>
                 </div>
-              </div>
-
-              <div class="dashboard-card__item dashboard-card--theme1">
-                <h4 class="dashboard-card__label">등록서식</h4>
-                <div class="dashboard-card__info">
-                  <span class="dashboard-card__info-label">총</span>
-                  <span class="dashboard-card__info-value">55</span>
-                  <span class="dashboard-card__info-unit">건</span>
+              </li>
+              <li>
+                <div class="dashboard-card__item">
+                  <h3 class="dashboard-card__label">등록 서식</h3>
+                  <p class="dashboard-card__value">55<span class="dashboard-card__unit">건</span></p>
+                  <p class="dashboard-card__meta">전체 누적</p>
                 </div>
-              </div>
-
-              <div class="dashboard-card__item dashboard-card--theme1">
-                <h4 class="dashboard-card__label">등록상품</h4>
-                <div class="dashboard-card__info">
-                  <span class="dashboard-card__info-label">총</span>
-                  <span class="dashboard-card__info-value">35</span>
-                  <span class="dashboard-card__info-unit">건</span>
+              </li>
+              <li>
+                <div class="dashboard-card__item">
+                  <h3 class="dashboard-card__label">등록 상품</h3>
+                  <p class="dashboard-card__value">35<span class="dashboard-card__unit">건</span></p>
+                  <p class="dashboard-card__meta">전체 누적</p>
                 </div>
-              </div>
+              </li>
+            </ul>
+          </section>
 
-            </div>
-          </article>
+          <section class="dashboard-card" aria-labelledby="work-title">
+            <h2 class="dashboard-card__title" id="work-title">내 업무<span class="dashboard-card__date">2022.12.12</span></h2>
+            <ul class="dashboard-card__list">
+              <li>
+                <a href="./list.html" class="dashboard-card__item work-card work-card--empty">
+                  <span class="work-card__head">
+                    서식의뢰
+                    <svg class="work-card__arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6" /></svg>
+                  </span>
+                  <span class="dashboard-card__value">0<span class="dashboard-card__unit">건</span></span>
+                  <span class="work-card__state">처리할 업무가 없어요</span>
+                </a>
+              </li>
+              <li>
+                <a href="./list.html" class="dashboard-card__item work-card work-card--todo">
+                  <span class="work-card__head">
+                    서식XX
+                    <svg class="work-card__arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6" /></svg>
+                  </span>
+                  <span class="dashboard-card__value">2<span class="dashboard-card__unit">건</span></span>
+                  <span class="work-card__state">처리 필요</span>
+                </a>
+              </li>
+              <li>
+                <a href="./list.html" class="dashboard-card__item work-card work-card--todo">
+                  <span class="work-card__head">
+                    상품XX
+                    <svg class="work-card__arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6" /></svg>
+                  </span>
+                  <span class="dashboard-card__value">1<span class="dashboard-card__unit">건</span></span>
+                  <span class="work-card__state">처리 필요 · 2022.12.11</span>
+                </a>
+              </li>
+            </ul>
+          </section>
 
-          <article class="dashboard-card" aria-label="내 업무 현황">
-            <h3 class="dashboard-card__title">MY WORK<span class="dashboard-card__date">(2022.12.12)</span></h3>
-            <div class="dashboard-card__list">
-
-              <div class="dashboard-card__item dashboard-card--theme1">
-                <h4 class="dashboard-card__label">서식의뢰</h4>
-                <div class="dashboard-card__info">
-                  <span class="dashboard-card__info-value under">0</span>
-                  <span class="dashboard-card__info-unit">건</span>
+          <section class="dashboard-card" aria-labelledby="help-title">
+            <h2 class="dashboard-card__title" id="help-title">도움말</h2>
+            <ul class="dashboard-card__list">
+              <li>
+                <div class="dashboard-card__item help-card">
+                  <span class="help-card__icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /></svg>
+                  </span>
+                  <div class="help-card__body">
+                    <h3 class="help-card__title">사용자 가이드</h3>
+                    <button type="button" class="help-card__action">PDF 다운로드</button>
+                  </div>
                 </div>
-              </div>
-
-              <div class="dashboard-card__item dashboard-card--theme2">
-                <h4 class="dashboard-card__label">서식XX</h4>
-                <div class="dashboard-card__info">
-                  <span class="dashboard-card__info-value under">2</span>
-                  <span class="dashboard-card__info-unit">건</span>
+              </li>
+              <li>
+                <div class="dashboard-card__item help-card">
+                  <span class="help-card__icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3" /><path d="M12 17h.01" /></svg>
+                  </span>
+                  <div class="help-card__body">
+                    <h3 class="help-card__title">자주 묻는 질문</h3>
+                    <a href="#" class="help-card__action">더보기</a>
+                  </div>
                 </div>
-              </div>
-
-              <div class="dashboard-card__item dashboard-card--theme3">
-                <h4 class="dashboard-card__label">상품XX</h4>
-                <span class="dashboard-card__date">(2022.12.11)</span>
-                <div class="dashboard-card__info">
-                  <span class="dashboard-card__info-value under">1</span>건
+              </li>
+              <li>
+                <div class="dashboard-card__item help-card">
+                  <span class="help-card__icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" /></svg>
+                  </span>
+                  <div class="help-card__body">
+                    <h3 class="help-card__title">장애 문의</h3>
+                    <p class="help-card__text">운영지원팀 · 내선 0000</p>
+                  </div>
                 </div>
-              </div>
-
-            </div>
-          </article>
-
-          <article class="dashboard-card" aria-label="안내">
-            <h3 class="dashboard-card__title">INFO</h3>
-            <div class="dashboard-card__list">
-
-              <div class="dashboard-card__item dashboard-card--theme4">
-                <h4 class="dashboard-card__label">사용자가이드</h4>
-                <div class="dashboard-card__info">
-                  <button type="button" aria-label="사용자가이드 다운로드">다운로드</button>
-                </div>
-              </div>
-
-              <div class="dashboard-card__item dashboard-card--theme4">
-                <h4 class="dashboard-card__label">FAQ</h4>
-                <div class="dashboard-card__info">
-                  <button type="button" aria-label="FAQ 더보기">더보기</button>
-                </div>
-              </div>
-
-              <div class="dashboard-card__item dashboard-card--theme4">
-                <h4 class="dashboard-card__label">장애문의</h4>
-                <div class="dashboard-card__info">
-                  <span class="dashboard-card__info-inquiry">운영지원팀</span>
-                  <span class="dashboard-card__info-inquiry">담당자 (내선 0000)</span>
-                </div>
-              </div>
-
-            </div>
-          </article>
+              </li>
+            </ul>
+          </section>
 
         </div>
         <!-- // dashboard__cards -->
 
-        <!-- 아코디언 영역 -->
-        <div class="dashboard__accordion">
-          <ul class="accordion" aria-label="업무 안내">
+        <!-- 업무 안내 -->
+        <aside class="dashboard__accordion panel" aria-labelledby="guide-title">
+          <h2 class="dashboard__accordion-title" id="guide-title">업무 안내</h2>
+          <ul class="accordion">
 
             <li class="accordion__list">
               <button type="button" class="accordion__header" aria-expanded="true" aria-controls="content-1">
                 <span class="accordion__title">서식의뢰</span>
-                <span class="accordion__icon" aria-hidden="true"></span>
+                <svg class="accordion__icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6" /></svg>
               </button>
               <div id="content-1" class="accordion__content">
-                <p>* 반드시 <span class="text--point">담당자와 사전 협의 후</span>,
-                  <br /> "비대면 전자약정 양서식 등록 신청서" 전자결재를 진행해주세요!
-                </p>
-                <p>　<span class="text--point">· 업무포탈 → 전자결제 → 비대면 전자약정 양서식 등록 신청서</span></p>
-                <p>* 전자서식 신규 작업의뢰 및 서식은 <span class="text--point">[서식 &gt; 서식의뢰]</span>에서 가능해요.</p>
-                <p>* 최종 전자서식은 전자약정 담당자의 확인과 검수를 마쳐야 생성이 되요.</p>
+                <ul class="accordion__body">
+                  <li>반드시 <strong class="text--point">담당자와 사전 협의 후</strong> "비대면 전자약정 양서식 등록 신청서" 전자결재를 진행해 주세요.
+                    <span class="accordion__path">업무포탈 → 전자결재 → 비대면 전자약정 양서식 등록 신청서</span>
+                  </li>
+                  <li>전자서식 신규 작업의뢰 및 서식은 <strong class="text--point">서식 › 서식의뢰</strong>에서 할 수 있어요.</li>
+                  <li>최종 전자서식은 전자약정 담당자의 확인과 검수를 마쳐야 생성돼요.</li>
+                </ul>
               </div>
             </li>
 
             <li class="accordion__list">
               <button type="button" class="accordion__header" aria-expanded="true" aria-controls="content-2">
                 <span class="accordion__title">서식관리</span>
-                <span class="accordion__icon" aria-hidden="true"></span>
+                <svg class="accordion__icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6" /></svg>
               </button>
               <div id="content-2" class="accordion__content">
-                <p>* 전자약정 처리가 필요한 모든 서식은 <span class="text--point">[서식등록]</span>부터 반드시 진행해주세요.</p>
-                <p>* [서식 &gt; 서식관리]에서 전자서식의 조회, 신규/수정 등의 업무를 처리할 수 있어요.</p>
-                <p>　· 조회 : 등록된 전자서식의 상태, 버전 등을 확인하거나, 특정 데이터를
-                  <br />　추가하여 'PDF문서'를 생성할 수 있어요.
-                </p>
-                <p>　· 신규/수정 : 새로운 전자서식을 등록하거나, 이미 등록된 전자서식을
-                  <br />　수정할 수 있으며, <span class="text--point">최소 2시간 이후부터 확인</span>할 수 있어요.
-                </p>
+                <ul class="accordion__body">
+                  <li>전자약정 처리가 필요한 모든 서식은 <strong class="text--point">서식등록</strong>부터 진행해 주세요.</li>
+                  <li>서식 › 서식관리에서 전자서식 조회, 신규·수정 업무를 할 수 있어요.
+                    <ul>
+                      <li>조회 : 등록된 서식의 상태, 버전을 확인하거나 데이터를 넣어 PDF 문서를 만들 수 있어요.</li>
+                      <li>신규·수정 : 새 서식을 등록하거나 기존 서식을 고칠 수 있어요. <strong class="text--point">최소 2시간 이후부터 확인</strong>할 수 있어요.</li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
             </li>
 
             <li class="accordion__list">
               <button type="button" class="accordion__header" aria-expanded="false" aria-controls="content-3">
                 <span class="accordion__title">통계</span>
-                <span class="accordion__icon" aria-hidden="true"></span>
+                <svg class="accordion__icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6" /></svg>
               </button>
               <div id="content-3" class="accordion__content">
-                <p>* [통계] 메뉴의 각 수치는 <span class="text--point">전일자까지의</span> 집계수치입니다.</p>
-                <p>* [단계별 오류발생] : 약정처리 단계별 오류에 대한 집계결과를 확인할 수 있어요.</p>
-                <p>* [분야별 이용통계] : 전자약정처리시스템에 대한 이용현황을 각 분야별
-                  <br />(업무별, 채널별, 상품별, 서식별)로 조회할 수 있어요.
-                </p>
-                <p>* [부서별 서식의뢰] : 전자약정서식 생성/수정에 대한 부서별 이용현황을 조회할 수 있어요.</p>
+                <ul class="accordion__body">
+                  <li>통계 메뉴의 각 수치는 <strong class="text--point">전일자까지의</strong> 집계 수치예요.</li>
+                  <li>단계별 오류발생 : 약정 처리 단계별 오류 집계 결과를 볼 수 있어요.</li>
+                  <li>분야별 이용통계 : 전자약정 처리 시스템 이용 현황을 업무별, 채널별, 상품별, 서식별로 조회할 수 있어요.</li>
+                  <li>부서별 서식의뢰 : 전자약정 서식 생성·수정에 대한 부서별 이용 현황을 조회할 수 있어요.</li>
+                </ul>
               </div>
             </li>
 
             <li class="accordion__list">
               <button type="button" class="accordion__header" aria-expanded="false" aria-controls="content-4">
                 <span class="accordion__title">공통</span>
-                <span class="accordion__icon" aria-hidden="true"></span>
+                <svg class="accordion__icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6" /></svg>
               </button>
               <div id="content-4" class="accordion__content">
-                <p>* <span class="text--point">SSO 시스템에 로그인이 안돼요!</span></p>
-                <p>　· 시스템 문제로 SSO 로그인이 안될 경우, FIDO방식* 로그인을 지원하고
-                  <br />　있어요.
-                  <br />　<em>FIDO 방식이란? 직원 인증 앱을 통해 이용할 수 있어요.
-                    <br />　　　　　　　<span class="text--secondary"> - 휴대폰 브라우저에서 인증 페이지로 접속 -</span>
-                  </em>
-                </p>
+                <ul class="accordion__body">
+                  <li><strong class="text--point">SSO 시스템에 로그인이 안 돼요!</strong>
+                    <ul>
+                      <li>시스템 문제로 SSO 로그인이 안 될 경우 FIDO 방식 로그인을 지원해요.</li>
+                      <li>FIDO 방식 : 직원 인증 앱으로 이용할 수 있어요. 휴대폰 브라우저에서 인증 페이지로 접속해 주세요.</li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
             </li>
 
           </ul>
-        </div>
+        </aside>
         <!-- // dashboard__accordion -->
 
-      </section>
+      </div>
     </main>
 
-    <footer class="site-footer" aria-label="사이트 정보">
-      <div class="footer__copyright">&copy; 2026 Bank 은행 (포트폴리오용 가상 화면)</div>
-      <address class="footer__contact" aria-label="회사 연락처">
-        서울시 중구 을지로 123 | Tel: 02-123-4567
-      </address>
+    <footer class="site-footer">
+      <p class="footer__copyright">&copy; 2026 Bank 은행 (포트폴리오용 가상 화면)</p>
+      <address class="footer__contact">서울시 중구 을지로 123 · Tel 02-123-4567</address>
     </footer>
 
   </div>

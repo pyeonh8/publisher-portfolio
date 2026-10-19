@@ -3,157 +3,238 @@
 /*
   Bank 은행 통합 관리자 센터
 
-  Main style
+  Main style : 대시보드
 */
 
-/*main__header*/
 .main-content__header {
-  display: inline-block;
-  font-size: 26px;
-}
-
-.main-content__user-name {
-  font-size: 32px;
-}
-
-.dashboard {
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
   justify-content: space-between;
-  margin-top: 20px;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.main-content__title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.main-content__sub,
+.main-content__date {
+  color: var(--color-text-sub);
+  font-size: 13px;
+}
+
+.main-content__sub {
+  margin-top: 4px;
+}
+
+/* 왼쪽 카드 영역 + 오른쪽 업무 안내 */
+.dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 24px;
 }
 
 .dashboard__cards {
-  width: 58%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.dashboard-card {
-  margin-bottom: 25px;
-}
-
+/* =========================================
+   대시보드 카드
+   ========================================= */
 .dashboard-card__title {
-  display: inline-block;
-  margin-bottom: 10px;
-  font-size: 20px;
-  font-weight: bold;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dashboard-card__date {
+  margin-left: 4px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .dashboard-card__list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
 .dashboard-card__item {
-  position: relative;
-  width: 100%;
-  height: 100px;
-  padding: 12px 10px;
-  border-radius: 6px;
-}
-
-.dashboard-card__title {
-  margin-bottom: 0;
-  font-weight: 500;
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.dashboard-card__date {
-  font-size: 10px;
-  margin-left: 4px;
-}
-
-.dashboard-card__info {
-  position: absolute;
-  right: 12px;
-  bottom: 10px;
-  text-align: right;
-}
-
-.dashboard-card__info-value {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0 5px;
-}
-
-.dashboard-card__info-value.under {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-position: under;
-}
-
-.dashboard-card__info button {
-  font-size: 14px;
-  padding: 0;
-  background: transparent;
-  border: none;
-  color: var(--secondary-color);
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.dashboard-card__info-inquiry {
-  display: block;
-}
-
-.dashboard-card__info-inquiry:first-of-type {
-  font-size: 14px;
-  margin-bottom: 3px;
-}
-
-.dashboard-card__info-inquiry:last-of-type {
-  font-size: 12px;
-}
-
-.dashboard-card--theme1 {
-  color: #ffffff;
-  background-color: var(--secondary-color);
-}
-
-.dashboard-card--theme2 {
-  color: #ffffff;
-  background-color: var(--primary-color);
-}
-
-.dashboard-card--theme3 {
-  color: var(--secondary-color);
-  background-color: #ffffff;
-  border: 2px solid var(--secondary-color);
-}
-
-.dashboard-card--theme3 .dashboard-card__title {
-  color: var(--secondary-color);
-}
-
-.dashboard-card--theme4 {
-  color: var(--secondary-color);
-  background-color: var(--bg-disabled);
-  border: 2px solid var(--border-color);
-}
-
-.dashboard-card--theme4 .dashboard-card__title {
-  color: var(--secondary-color);
-}
-
-.dashboard__accordion {
-  width: 41%;
-  margin-top: 23px;
-}
-
-.main-content {
-  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
 }
 
 .dashboard-card__label {
+  color: var(--color-text-sub);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.dashboard-card__value {
+  margin-top: 12px;
+  font-size: 30px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.dashboard-card__unit {
+  margin-left: 4px;
+  color: var(--color-text-sub);
+  font-size: 15px;
   font-weight: 500;
-  font-size: 18px;
-  margin-bottom: 5px;
 }
 
-.text--point {
-  color: var(--success-color);
+.dashboard-card__meta {
+  margin-top: 2px;
+  color: var(--color-text-muted);
+  font-size: 12px;
 }
 
-.text--secondary {
-  color: #557a9f;
+/* 가장 중요한 숫자 하나만 강조 */
+.dashboard-card__item--highlight {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.dashboard-card__item--highlight .dashboard-card__label,
+.dashboard-card__item--highlight .dashboard-card__unit,
+.dashboard-card__item--highlight .dashboard-card__meta {
+  color: #dde5f5;
+}
+
+/* 내 업무 카드 : 링크 */
+.work-card {
+  gap: 10px;
+  padding: 18px 20px;
+}
+
+.work-card:hover {
+  border-color: var(--color-primary);
+}
+
+.work-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.work-card__arrow {
+  color: var(--color-text-muted);
+}
+
+.work-card .dashboard-card__value {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.work-card__state {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+/* 처리할 업무가 있을 때 */
+.work-card--todo {
+  border-color: var(--color-primary-line);
+}
+
+.work-card--todo .dashboard-card__value,
+.work-card--todo .dashboard-card__unit,
+.work-card--todo .work-card__arrow {
+  color: var(--color-primary);
+}
+
+.work-card--todo .work-card__state {
+  align-self: flex-start;
+  padding: 2px 8px;
+  background-color: var(--color-primary-soft);
+  border-radius: var(--radius-full);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* 0건 */
+.work-card--empty .dashboard-card__value,
+.work-card--empty .dashboard-card__unit {
+  color: var(--color-text-muted);
+}
+
+/* 도움말 카드 */
+.help-card {
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+}
+
+.help-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 40px;
+  height: 40px;
+  background-color: var(--color-surface-muted);
+  border-radius: 12px;
+  color: var(--color-primary);
+}
+
+.help-card__body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.help-card__title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.help-card__action {
+  align-self: flex-start;
+  color: var(--color-primary);
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.help-card__text {
+  color: var(--color-text-sub);
+  font-size: 13px;
+}
+
+/* =========================================
+   업무 안내 : 카드 영역 높이에 맞추고 넘치면 스크롤
+   ========================================= */
+.dashboard__accordion {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 20px;
+}
+
+.dashboard__accordion-title {
+  margin: 14px 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* flex-basis 0 : 안내 영역이 카드 영역 높이를 늘리지 않고 남는 높이만 차지 */
+.accordion {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
 }

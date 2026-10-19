@@ -3,60 +3,60 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
-  <title>Bank 은행 통합 관리자 센터</title>
+  <title>로그인 | Bank 은행 통합 관리자 센터</title>
   <link rel="stylesheet" href="../css/style.css" />
-  <script src="../js/jquery-3.6.1.min.js"></script>
-  <script src="../js/jquery-ui.min.js"></script>
-  <script src="../js/template.js"></script>
 </head>
 
 <body>
+  <main id="main-content" class="login">
+    <div class="login__box">
 
-  <main id="main-content" class="wrap">
-    <section class="section-container" aria-label="로그인 페이지">
-      <div class="login__box">
+      <!-- 브랜드 영역 : 장식이라 스크린리더에서 숨김 -->
+      <div class="login__brand" aria-hidden="true">
+        <span class="login__mark">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9" /><path d="M12 12c0-4 3-7 8-7 0 5-3 7-8 7z" /><path d="M12 14c0-3-2-5-7-5 0 4 2 5 7 5z" /></svg>
+        </span>
+        <div>
+          <p class="login__brand-title">Bank 은행<br />통합 관리자 센터</p>
+          <p class="login__brand-desc">약정 · 서식 · 통계 업무를 한 곳에서 관리해요.</p>
+        </div>
+      </div>
 
-        <header class="login__header">
-          <img class="login__logo" src="../img/logo_icon.png" alt="은행 로고" />
-          <h2 class="login__title"><span>Bank 은행 통합 관리자 센터</span> 로그인</h2>
-        </header>
+      <section class="login__section" aria-labelledby="login-title">
+        <h1 class="login__title" id="login-title">Bank 은행 통합 관리자 센터 로그인</h1>
+        <p class="login__desc">사내 계정과 인증 방식으로 로그인하세요.</p>
 
-        <form class="login__form" action="#" aria-label="관리자 로그인">
-
-          <div class="login__input-box">
-            <label for="userId" class="login__label a11y-hidden">아이디</label>
-            <input type="text" id="userId" class="login__input" name="userId" placeholder="아이디를 입력하세요"
-              autocomplete="username" />
+        <!-- 포트폴리오용 : 로그인하면 메인 화면으로 이동 -->
+        <form class="login__form" action="./main.html">
+          <div class="field">
+            <label for="userId" class="field__label">아이디</label>
+            <input type="text" id="userId" class="input input--lg" name="userId" placeholder="아이디를 입력하세요" autocomplete="username" />
           </div>
 
-          <div class="login__input-box">
-            <label for="password" class="login__label a11y-hidden">인증번호</label>
-            <input type="password" id="password" class="login__input" name="password" placeholder="인증번호를 입력하세요" disabled
-              aria-describedby="password-guide" autocomplete="current-password" />
-            <span id="password-guide" class="a11y-hidden">OTP 인증 선택 시 활성화됩니다</span>
-          </div>
-
-          <fieldset class="login__radio-box radio-btn">
-            <legend class="a11y-hidden">인증 방식 선택</legend>
-            <input type="radio" id="fidoNum" name="login__radio-btn" value="fido" checked />
-            <label for="fidoNum">FIDO 인증</label>
-            <input type="radio" id="otpNum" name="login__radio-btn" value="otp" />
-            <label for="otpNum">OTP 인증</label>
+          <fieldset class="field">
+            <legend class="field__label">인증 방식</legend>
+            <div class="segment">
+              <input type="radio" class="segment__input" id="fidoNum" name="login__radio-btn" value="fido" checked />
+              <label class="segment__label" for="fidoNum">FIDO 인증</label>
+              <input type="radio" class="segment__input" id="otpNum" name="login__radio-btn" value="otp" />
+              <label class="segment__label" for="otpNum">OTP 인증</label>
+            </div>
           </fieldset>
 
-          <button type="submit" class="login-btn mt20">로그인</button>
+          <div class="field">
+            <label for="password" class="field__label">인증번호</label>
+            <input type="password" id="password" class="input input--lg" name="password" placeholder="인증번호 6자리" disabled aria-describedby="password-guide" autocomplete="one-time-code" />
+            <p id="password-guide" class="field__hint">OTP 인증을 선택하면 입력할 수 있어요.</p>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg">로그인</button>
         </form>
 
-        <p class="login-notice">
-          문의전화<br />
-          통합 관리자 센터 운영 : 내선 0000
-        </p>
-
-      </div>
-    </section>
+        <p class="login-notice">로그인 문의 · 통합 관리자 센터 운영 내선 0000</p>
+      </section>
+    </div>
   </main>
 
   <script src="../js/ui.js"></script>

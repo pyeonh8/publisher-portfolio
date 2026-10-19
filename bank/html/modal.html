@@ -3,136 +3,101 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
-  <title>공지사항 수정 :: Bank 은행 통합 관리자 센터</title>
+  <title>공지사항 수정 | Bank 은행 통합 관리자 센터</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 
 <body>
   <div class="wrap">
     <dialog class="modal" aria-labelledby="modal-title" open>
-      <div class="modal__inner" style="height: 660px; width: 700px;">
+      <div class="modal__inner">
         <header class="modal__header">
-          <h1 id="modal-title">공지사항 수정</h1>
+          <h1 class="modal__title" id="modal-title">공지사항 수정</h1>
           <button type="button" class="modal__close" aria-label="팝업 닫기">
-            <img src="../img/close.png" alt="" aria-hidden="true" />
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18" /><path d="M6 6l12 12" /></svg>
           </button>
         </header>
 
-        <div class="modal__body">
-          <div class="modal__board modal__board--scroll">
-            <div class="board-ty">
-              <table class="table-col">
-                <caption class="a11y-hidden">공지사항 수정 입력 폼</caption>
-                <colgroup>
-                  <col style="width: 30px" />
-                  <col style="width: 80px" />
-                  <col style="width: 30px" />
-                  <col style="width: 80px" />
-                </colgroup>
-                <tbody>
+        <form class="modal__form" action="#" aria-labelledby="modal-title">
+          <div class="modal__body">
+            <p class="field__hint"><span class="field__required" aria-hidden="true">*</span> 표시는 필수 입력 항목이에요.</p>
 
-                  <tr>
-                    <th class="row" scope="row">작성자</th>
-                    <td colspan="3">김관리</td>
-                  </tr>
+            <div class="modal__row">
+              <div class="field">
+                <span class="field__label">작성자</span>
+                <span class="input-static">김관리</span>
+              </div>
 
-                  <tr>
-                    <th class="row" scope="row">
-                      <label for="inp_02">구분
-                        <span aria-hidden="true">*</span>
-                      </label>
-                    </th>
+              <div class="field">
+                <label class="field__label" for="inp_02">구분 <span class="field__required" aria-hidden="true">*</span></label>
+                <select class="select" id="inp_02" required>
+                  <option selected>공지사항</option>
+                  <option>자료실</option>
+                </select>
+              </div>
 
-                    <td>
-                      <select id="inp_02" aria-required="true">
-                        <option selected>공지사항</option>
-                        <option>자료실</option>
-                      </select>
-                    </td>
-                    <th class="row">노출여부
-                    </th>
-                    <td>
-                      <fieldset class="radio-box">
-                        <legend class="row">노출여부</legend>
-                        <span class="radio-btn">
-                          <input type="radio" id="radio_on" name="expose_yn" value="Y" checked />
-                          <label for="radio_on">노출</label>
-                          <input type="radio" id="radio_off" name="expose_yn" value="N" />
-                          <label for="radio_off">미노출</label>
-                        </span>
-                      </fieldset>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <th class="row" scope="row">
-                      <label for="inp_03">제목<span aria-hidden="true">*</span></label>
-                    </th>
-                    <td colspan="3">
-                      <input type="text" id="inp_03" class="input-ty input-full" value="공지사항 제목" aria-required="true" />
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <th class="row" scope="row">
-                      <label for="inp_04">내용<span aria-hidden="true">*</span></label>
-                    </th>
-                    <td colspan="3">
-                      <textarea id="inp_04" class="input-full textarea-fixed textarea-fixed--lg" rows="8"
-                        aria-required="true">공지사항 내용</textarea>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <th class="row" scope="row">
-                      <label>첨부파일</label>
-                    </th>
-                    <td colspan="3" data-attach-max="9" class="attach-file__box">
-                      <ul class="attach-file__list">
-                        <li class="attach-file__item attach-file__item--selected">
-                          <span class="file__name">업무 체크리스트1.hwp</span>
-                          <button type="button" class="file__delete" aria-label="업무 체크리스트 파일 삭제">
-                            <img src="../img/close_file.png" alt="" aria-hidden="true" />
-                          </button>
-
-                        </li>
-                        <li class="attach-file__item attach-file__item--selected">
-                          <span class="file__name">업무 체크리스트2.hwp</span>
-                          <button type="button" class="file__delete" aria-label="업무 체크리스트 파일 삭제">
-                            <img src="../img/close_file.png" alt="" aria-hidden="true" />
-                          </button>
-                        </li>
-                        <li class="attach-file__item attach-file__item--new">
-                          <label for="file_3" class="file__label btn2">파일선택</label>
-                          <input type="file" accept=".hwp, .pdf, .txt" id="file_3" class="a11y-hidden" />
-                          <span class="file__name file__name--empty" hidden>선택한 파일이 없음</span>
-                        </li>
-                      </ul>
-                    </td>
-                  </tr>
-
-                </tbody>
-              </table>
+              <fieldset class="field">
+                <legend class="field__label">노출 여부</legend>
+                <div class="segment segment--sm">
+                  <input type="radio" class="segment__input" id="radio_on" name="expose_yn" value="Y" checked />
+                  <label class="segment__label" for="radio_on">노출</label>
+                  <input type="radio" class="segment__input" id="radio_off" name="expose_yn" value="N" />
+                  <label class="segment__label" for="radio_off">미노출</label>
+                </div>
+              </fieldset>
             </div>
-          </div>
-          <!-- // modal__board -->
 
-          <div class="modal__btn" role="group" aria-label="공지사항 수정 액션">
-            <div class="center">
-              <button type="submit" class="modal_btn btn2">수정</button>
+            <div class="field">
+              <label class="field__label" for="inp_03">제목 <span class="field__required" aria-hidden="true">*</span></label>
+              <input type="text" class="input" id="inp_03" value="공지사항 제목" required />
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="inp_04">내용 <span class="field__required" aria-hidden="true">*</span></label>
+              <textarea class="textarea" id="inp_04" rows="7" required>공지사항 내용</textarea>
+            </div>
+
+            <div class="field attach-file__box" data-attach-max="9">
+              <div class="attach-file__head">
+                <span class="field__label" id="attach-label">첨부파일</span>
+                <span class="attach-file__rule">hwp, pdf, txt · 최대 9개</span>
+              </div>
+              <ul class="attach-file__list" aria-labelledby="attach-label">
+                <li class="attach-file__item attach-file__item--selected">
+                  <svg class="file__icon" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /></svg>
+                  <span class="file__name">업무 체크리스트1.hwp</span>
+                  <button type="button" class="file__delete" aria-label="업무 체크리스트1.hwp 삭제">
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18" /><path d="M6 6l12 12" /></svg>
+                  </button>
+                </li>
+                <li class="attach-file__item attach-file__item--selected">
+                  <svg class="file__icon" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /></svg>
+                  <span class="file__name">업무 체크리스트2.hwp</span>
+                  <button type="button" class="file__delete" aria-label="업무 체크리스트2.hwp 삭제">
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18" /><path d="M6 6l12 12" /></svg>
+                  </button>
+                </li>
+                <li class="attach-file__item attach-file__item--new">
+                  <input type="file" accept=".hwp,.pdf,.txt" id="file_3" class="file__input a11y-hidden" />
+                  <label for="file_3" class="file__label">
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14" /><path d="M5 12h14" /></svg>
+                    파일 선택
+                  </label>
+                </li>
+                <li class="file__name--empty" hidden>선택한 파일이 없어요.</li>
+              </ul>
             </div>
           </div>
 
-        </div>
-        <!-- // modal__body -->
-
+          <div class="modal__btn">
+            <button type="button" class="btn btn--outline">취소</button>
+            <button type="submit" class="btn btn--primary btn--wide">수정</button>
+          </div>
+        </form>
       </div>
-      <!-- // modal__inner -->
     </dialog>
-
   </div>
 
   <script src="../js/ui.js"></script>
