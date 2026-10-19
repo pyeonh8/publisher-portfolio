@@ -159,11 +159,151 @@
       <ul class="flight-list">
         <li class="flight-list__item">
           <article class="flight-card">
-            
+
+            <div class="flight-card__info">
+              <div class="flight-card__head">
+                <span class="flight-card__logo" aria-hidden="true">HS</span>
+                <h3 class="flight-card__airline">하늘숲항공</h3>
+                <span class="flight-card__no">HS 701</span>
+                <span class="flight-card__badge">직항</span>
+              </div>
+
+              <div class="flight-card__schedule">
+                <p class="flight-card__point">
+                  <time class="flight-card__time" datetime="08:10">08:10</time>
+                  <span class="flight-card__airport">ICN 인천</span>
+                </p>
+                <p class="flight-card__duration">2시간 20분</p>
+                <p class="flight-card__point">
+                  <time class="flight-card__time" datetime="10:30">10:30</time>
+                  <span class="flight-card__airport">NRT 나리타</span>
+                </p>
+              </div>
+            </div>
+
+            <ul class="flight-card__cabins" aria-label="좌석 등급">
+                <li class="cabin">
+                  <span class="cabin__name">일반석</span>
+                  <strong class="cabin__price">₩189,000</strong>
+                  <span class="cabin__left">38석 남음</span>
+                  <button type="button" class="cabin__btn">선택</button>
+                </li>
+                <li class="cabin cabin--soldout">
+                  <span class="cabin__name">비즈니스</span>
+                  <strong class="cabin__price">₩529,000</strong>
+                  <span class="cabin__left">0석 남음</span>
+                  <button type="button" class="cabin__btn" disabled>매진</button>
+                </li>
+                <li class="cabin">
+                  <span class="cabin__name">퍼스트</span>
+                  <strong class="cabin__price">₩899,000</strong>
+                  <span class="cabin__left cabin__left--few">1석 남음</span>
+                  <button type="button" class="cabin__btn">선택</button>
+                </li>
+            </ul>
+
           </article>
         </li>
         <li class="flight-list__item">
-          <article class="flight-card"></article>
+          <article class="flight-card">
+
+            <div class="flight-card__info">
+              <div class="flight-card__head">
+                <span class="flight-card__logo" aria-hidden="true">ON</span>
+                <h3 class="flight-card__airline">온누리에어</h3>
+                <span class="flight-card__no">ON 215</span>
+                <span class="flight-card__badge">직항</span>
+              </div>
+
+              <div class="flight-card__schedule">
+                <p class="flight-card__point">
+                  <time class="flight-card__time" datetime="11:40">11:40</time>
+                  <span class="flight-card__airport">ICN 인천</span>
+                </p>
+                <p class="flight-card__duration">2시간 25분</p>
+                <p class="flight-card__point">
+                  <time class="flight-card__time" datetime="14:05">14:05</time>
+                  <span class="flight-card__airport">NRT 나리타</span>
+                </p>
+              </div>
+            </div>
+
+            <ul class="flight-card__cabins" aria-label="좌석 등급">
+                <li class="cabin">
+                  <span class="cabin__name">일반석</span>
+                  <strong class="cabin__price">₩204,000</strong>
+                  <span class="cabin__left">12석 남음</span>
+                  <button type="button" class="cabin__btn">선택</button>
+                </li>
+                <li class="cabin cabin--soldout">
+                  <span class="cabin__name">비즈니스</span>
+                  <strong class="cabin__price">₩548,000</strong>
+                  <span class="cabin__left">0석 남음</span>
+                  <button type="button" class="cabin__btn" disabled>매진</button>
+                </li>
+                <li class="cabin cabin--soldout">
+                  <span class="cabin__name">퍼스트</span>
+                  <strong class="cabin__price">₩912,000</strong>
+                  <span class="cabin__left">0석 남음</span>
+                  <button type="button" class="cabin__btn" disabled>매진</button>
+                </li>
+            </ul>
+
+          </article>
+        </li>
+        <li class="flight-list__item">
+          <div class="price-alert">
+            <p class="price-alert__title">이 노선 가격이 바뀌면 알려드릴게요</p>
+            <p class="price-alert__desc">서울 → 도쿄 · 10월 26일 출발 기준</p>
+            <button type="button" class="price-alert__btn">가격 알림 받기</button>
+          </div>
+        </li>
+        <li class="flight-list__item">
+          <article class="flight-card">
+
+            <div class="flight-card__info">
+              <div class="flight-card__head">
+                <span class="flight-card__logo" aria-hidden="true">SB</span>
+                <h3 class="flight-card__airline">새벽항공</h3>
+                <span class="flight-card__no">SB 330</span>
+                <span class="flight-card__badge">직항</span>
+              </div>
+
+              <div class="flight-card__schedule">
+                <p class="flight-card__point">
+                  <time class="flight-card__time" datetime="15:20">15:20</time>
+                  <span class="flight-card__airport">ICN 인천</span>
+                </p>
+                <p class="flight-card__duration">2시간 25분</p>
+                <p class="flight-card__point">
+                  <time class="flight-card__time" datetime="17:45">17:45</time>
+                  <span class="flight-card__airport">NRT 나리타</span>
+                </p>
+              </div>
+            </div>
+
+            <ul class="flight-card__cabins" aria-label="좌석 등급">
+                <li class="cabin">
+                  <span class="cabin__name">일반석</span>
+                  <strong class="cabin__price">₩221,000</strong>
+                  <span class="cabin__left">64석 남음</span>
+                  <button type="button" class="cabin__btn">선택</button>
+                </li>
+                <li class="cabin">
+                  <span class="cabin__name">비즈니스</span>
+                  <strong class="cabin__price">₩560,000</strong>
+                  <span class="cabin__left cabin__left--few">3석 남음</span>
+                  <button type="button" class="cabin__btn">선택</button>
+                </li>
+                <li class="cabin cabin--soldout">
+                  <span class="cabin__name">퍼스트</span>
+                  <strong class="cabin__price">₩930,000</strong>
+                  <span class="cabin__left">0석 남음</span>
+                  <button type="button" class="cabin__btn" disabled>매진</button>
+                </li>
+            </ul>
+
+          </article>
         </li>
       </ul>
 
