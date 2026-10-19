@@ -1,0 +1,77 @@
+/* =========================================
+   디자인 토큰
+   모바일 값이 기본, 1024px 이상에서 크기만 PC 값으로 덮어씀
+   ========================================= */
+
+:root {
+  /* 폰트 */
+  --font-base: "Gothic A1", sans-serif; /* 본문, 제목 */
+  --font-num: "Space Grotesk", sans-serif; /* 시간, 공항 코드, 편명 */
+
+  /* 배경, 면 */
+  --color-bg: #f4f6fa; /* 페이지 배경, 날짜·승객 칸 */
+  --color-surface: #ffffff; /* 카드, 헤더 */
+  --color-surface-sub: #fafbfd; /* 좌석 등급 영역 */
+
+  /* 글자 */
+  --color-text: #121826; /* 기본 글자 */
+  --color-text-sub: #4a5263; /* 보조 설명 */
+  --color-text-muted: #6b7384; /* 라벨, 매진 글자 */
+
+  /* 선 */
+  --color-line: #e3e7ee; /* 카드 테두리, 구분선 */
+  --color-line-strong: #d5dae3; /* 버튼·칩 테두리 */
+
+  /* 포인트 */
+  --color-primary: #1f5eff; /* 파란 띠, 주요 버튼 */
+  --color-primary-text: #1a4fd6; /* 흰 배경 위 파란 글자 */
+  --color-primary-soft: #eaf0ff; /* 선택된 탭 배경 */
+  --color-danger: #c7341f; /* "1석 남음" */
+  --color-dark: #121826; /* 가격 알림 배너 배경 */
+  --color-accent: #ffc34d; /* 배너 버튼, 종 아이콘 */
+
+  /* 혜택 카드 (연한 배경 / 진한 글자) */
+  --color-green-soft: #e8f6ef;
+  --color-green: #0e6b44;
+  --color-orange-soft: #fff1de;
+  --color-orange: #9a4b00;
+  --color-purple-soft: #f1ecff;
+  --color-purple: #5b3cc4;
+
+  /* 글자 크기 */
+  --fs-12: 12px; /* 배지, 잔여석 */
+  --fs-13: 13px; /* 보조 설명 */
+  --fs-14: 14px; /* 칩, 작은 본문 */
+  --fs-15: 15px; /* 기본 본문 */
+  --fs-16: 16px; /* 검색 칸 값 */
+  --fs-22: 22px; /* 섹션 제목, 공항 코드 */
+  --fs-26: 26px; /* 출발·도착 시간 */
+  --fs-32: 32px; /* 페이지 제목 */
+
+  /* 간격 */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-96: 96px;
+
+  /* 모서리 */
+  --radius-sm: 10px; /* 작은 버튼 */
+  --radius-md: 12px; /* 검색 칸, 좌석 칸 */
+  --radius-lg: 18px; /* 항공편 카드 */
+  --radius-xl: 20px; /* 검색 카드 */
+  --radius-full: 999px; /* 칩, 배지 */
+
+  /* 그림자 */
+  --shadow-card: 0 8px 24px rgba(18, 24, 38, 0.08);
+
+  /* 레이아웃 */
+  --container: 1160px;
+  --gutter: 20px;
+  --control-md: 44px; /* 버튼 최소 높이 */
+}

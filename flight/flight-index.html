@@ -4,13 +4,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>일단 미정</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <header></header>
-  <main></main>
+  <header class="site-header">
+    <div class="site-header__inner l-wrap">
+      <a href="#" class="site-header__logo">서비스명</a>
+      <nav class="site-nav" aria-label="주요 메뉴">
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a href="#" class="site-nav__link" aria-current="page">항공편</a>
+          </li>
+          <li class="site-nav__item">
+            <a href="#" class="site-nav__link">호텔</a>
+          </li>
+          <li class="site-nav__item">
+            <a href="#" class="site-nav__link">패키지</a>
+          </li>
+          <li class="site-nav__item">
+            <a href="#" class="site-nav__link">특가</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="#" class="btn btn--solid login-btn">로그인</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__inner l-wrap">
+      <p class="hero__eyebrow">출국 · 10월 26일 (일) · 성인 1명</p>
+      <h1 class="hero__title">서울 → 도쿄 항공권</h1>
+    </div>
+  </section>
+
+  <main class="l-wrap">
+
+    <search>
+      <form action="#" class="flight-search" aria-label="항공권 검색">
+
+        <fieldset class="flight-search__trip">
+          <legend class="sr-only">여정 종류</legend>
+          <label for="flight-search__radio1">
+            <input type="radio" name="trip" value="round" id="flight-search__radio1" checked>왕복
+          </label>
+          <label for="flight-search__radio2">
+            <input type="radio" name="trip" value="one-way" id="flight-search__radio2">편도
+          </label>
+          <label for="flight-search__radio3">
+            <input type="radio" name="trip" value="Multi" id="flight-search__radio3">다구간
+          </label>
+        </fieldset>
+
+        <div>
+          <button type="button" class="flight-search__place flight-search__place--depart">
+            <span class="flight-search__label">출발</span>
+            <span class="flight-search__code">ICN</span>
+            <span class="flight-search__city">서울/인천</span>
+          </button>
+          <!-- 이미지 필요 -->
+          <button type="button" class="flight-search__place--swap">
+            <img src="#" alt=" 도착과 출발 바꾸기">
+          </button>
+          <button type="button" class="flight-search__place flight-search__place--arrive">
+            <span class="flight-search__label">도착</span>
+            <span class="flight-search__code">NRT</span>
+            <span class="flight-search__city">도쿄/나리타</span>
+          </button>
+        </div>
+
+        <div>
+          <button type="button" class="flight-search__card">
+            <span class="flight-search__label">가는 날</span>
+            <span class="flight-search__date">10.26 (일)</span>
+          </button>
+          <button type="button" class="flight-search__card">
+            <span class="flight-search__label">오는 날</span>
+            <span class="flight-search__date">10.30 (목)</span>
+          </button>
+          <button type="button" class="flight-search__card">
+            <span class="flight-search__label">승객 · 좌석</span>
+            <span class="flight-search__seat">성인 1명 · 전체</span>
+          </button>
+        </div>
+
+        <button type="submit" class="btn btn--solid">다시 검색</button>
+      </form>
+    </search>
+
+    <ul class="event-card" aria-label="이용 혜택">
+      <li class="event-card__item">
+        <strong class="event-card__title">회원 혜택</strong>
+        <span class="event-card__desc">[혜택 문구 한 줄]</span>
+      </li>
+      <li class="event-card__item">
+        <strong class="event-card__title">항공 + 호텔</strong>
+        <span class="event-card__desc">[함께 예약 혜택 문구]</span>
+      </li>
+      <li class="event-card__item">
+        <strong class="event-card__title">수하물 포함 항공편</strong>
+        <span class="event-card__desc">[수하물 안내 문구]</span>
+      </li>
+    </ul>
+
+    <section class="flight-result" aria-labelledby="result__title">
+
+      <div class="flight-result__head">
+        <h2 class="flight-result__title" id="result__title">가는 편 선택</h2>
+        <p class="flight-result__count">검색 결과 <strong>120</strong>개</p>
+      </div>
+
+      <fieldset class="sort-tab">
+        <legend class="sr-only">정렬 기준</legend>
+        <label for="sort-tab1">
+          <input type="radio" name="tab" value="recommended" id="sort-tab1" checked>
+          <strong class="sort-tab__title">추천순</strong>
+          <span class="sort-tab__desc">₩439,400 · 평균 2시간 40분</span>
+        </label>
+        <label for="sort-tab2">
+          <input type="radio" name="tab" value="lowest-price" id="sort-tab2">
+          <strong class="sort-tab__title">최저가</strong>
+          <span class="sort-tab__desc">₩189,000 · 평균 2시간 35분</span>
+        </label>
+        <label for="sort-tab3">
+          <input type="radio" name="tab" value="fastest" id="sort-tab3">
+          <strong class="sort-tab__title">최단 시간</strong>
+          <span class="sort-tab__desc">₩263,200 · 평균 2시간 15분</span>
+        </label>
+      </fieldset>
+
+      <fieldset class="filter-chip">
+        <legend class="sr-only">빠른 필터</legend>
+        <label for="filter-chip1">
+          <input type="checkbox" name="filter" value="nonstop" id="filter-chip1" checked>직항만
+        </label>
+        <label for="filter-chip2">
+          <input type="checkbox" name="filter" value="morning_departure" id="filter-chip2">오전 출발
+        </label>
+        <label for="filter-chip3">
+          <input type="checkbox" name="filter" value="baggage_included" id="filter-chip3">수하물 포함
+        </label>
+        <label for="filter-chip4">
+          <input type="checkbox" name="filter" value="free_cancellation" id="filter-chip4">무료 취소
+        </label>
+      </fieldset>
+
+      <ul class="flight-list">
+        <li class="flight-list__item">
+          <article class="flight-card">
+            
+          </article>
+        </li>
+        <li class="flight-list__item">
+          <article class="flight-card"></article>
+        </li>
+      </ul>
+
+    </section>
+
+    <aside>
+      <h2>예약 전 확인하세요</h2>
+      <ul></ul>
+    </aside>
+
+  </main>
 
 </body>
 
