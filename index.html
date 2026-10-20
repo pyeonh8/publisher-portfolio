@@ -156,17 +156,70 @@
     <section class="works l-wrap" id="works" aria-labelledby="works-title">
       <p class="section-label">WORKS</p>
       <h2 class="section-title" id="works-title">작업물</h2>
-      <p class="section-intro">직접 디자인하고 퍼블리싱한 사이트와, 실무 경험을 바탕으로 다시 퍼블리싱한 작업물입니다.</p>
+      <p class="section-intro">실무 경험을 바탕으로 다시 디자인·퍼블리싱한 작업물과, 기획부터 배포까지 직접 진행한 사이트입니다.</p>
 
       <ul class="work-list">
         <li>
           <article class="work" aria-labelledby="work-1">
             <div class="work__media">
+              <img src="./image/thumb_finance_main.jpg" alt="은행 통합 관리자 센터 화면" />
+            </div>
+            <div class="work__body">
+              <p class="work__category">01 · FINANCIAL · ADMIN</p>
+              <h3 class="work__title" id="work-1">은행 통합 관리자 센터</h3>
+              <dl class="work__info">
+                <dt>OVERVIEW</dt>
+                <dd>금융권 실무 경험을 바탕으로 가상 은행으로 재구성한 관리자 시스템. 오래된 UI를 새로 디자인하고 코드 구조까지 정리</dd>
+                <dt>ROLE</dt>
+                <dd>퍼블리싱 · 구조 개선 · 웹 접근성</dd>
+                <dt>POINT</dt>
+                <dd>시안을 만들고 색·간격을 CSS 토큰으로 정리해 화면 전체를 개편. 테이블 레이아웃과 jQuery 의존을 걷어 내고 시맨틱 마크업·BEM·ARIA로 정리. 시안과 CSS 초안은
+                  AI와 협업, 디자인 방향과 검수·수정은 직접 진행</dd>
+                <dt>STACK</dt>
+                <dd>HTML · CSS · JavaScript</dd>
+              </dl>
+              <div class="work__links">
+                <a class="btn btn--solid btn--sm" href="./bank/bank-index.html">사이트 보기</a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="work work--reverse" aria-labelledby="work-2">
+            <div class="work__media">
+              <img src="./image/thumb_salady_main.jpg" alt="샐러디 홈페이지 화면" />
+            </div>
+            <div class="work__body">
+              <p class="work__category">02 · PERSONAL · RENEWAL</p>
+              <h3 class="work__title" id="work-2">샐러디 홈페이지</h3>
+              <dl class="work__info">
+                <dt>OVERVIEW</dt>
+                <dd>2023년에 만든 브랜드 홈페이지를 직접 리뉴얼</dd>
+                <dt>ROLE</dt>
+                <dd>유지보수 · 코드 개선 · 반응형</dd>
+                <dt>POINT</dt>
+                <dd>jQuery · Slick 제거 후 바닐라 JS로 전환, BEM·접근성·반응형 개선</dd>
+                <dt>STACK</dt>
+                <dd>HTML · CSS · JavaScript</dd>
+              </dl>
+              <div class="work__links">
+                <a class="btn btn--solid btn--sm" href="./salady/salady-index.html">사이트 보기</a>
+                <a class="btn btn--outline btn--sm" href="https://github.com/pyeonh8/salady-refactoring" target="_blank"
+                  rel="noopener">GitHub<span class="sr-only">(새 탭)</span></a>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="work" aria-labelledby="work-3">
+            <div class="work__media">
               <img src="./image/thumb_animal_main.jpg" alt="멍냥 동물병원 메인 화면" />
             </div>
             <div class="work__body">
-              <p class="work__category">01 · PERSONAL · DESIGN &amp; PUBLISHING</p>
-              <h3 class="work__title" id="work-1">멍냥 동물병원</h3>
+              <p class="work__category">03 · PERSONAL · DESIGN &amp; PUBLISHING</p>
+              <h3 class="work__title" id="work-3">멍냥 동물병원</h3>
               <dl class="work__info">
                 <dt>OVERVIEW</dt>
                 <dd>기획·디자인부터 배포까지 진행한 가상 동물병원 반응형 사이트</dd>
@@ -184,58 +237,6 @@
                 <a class="btn btn--outline btn--sm" href="https://pyeonh8.github.io/animal-hospital/guide/"
                   target="_blank" rel="noopener">컴포넌트 가이드<span class="sr-only">(새 탭)</span></a>
                 <a class="btn btn--outline btn--sm" href="https://github.com/pyeonh8/animal-hospital" target="_blank"
-                  rel="noopener">GitHub<span class="sr-only">(새 탭)</span></a>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li>
-          <article class="work work--reverse" aria-labelledby="work-2">
-            <div class="work__media">
-              <img src="./image/thumb_finance_main.jpg" alt="은행 통합 관리자 센터 화면" />
-            </div>
-            <div class="work__body">
-              <p class="work__category">02 · FINANCIAL · ADMIN</p>
-              <h3 class="work__title" id="work-2">은행 통합 관리자 센터</h3>
-              <dl class="work__info">
-                <dt>OVERVIEW</dt>
-                <dd>실무 경험을 바탕으로 가상의 은행으로 다시 구성한 금융권 관리자 시스템</dd>
-                <dt>ROLE</dt>
-                <dd>퍼블리싱 · 구조 개선 · 웹 접근성</dd>
-                <dt>POINT</dt>
-                <dd>BEM 방법론과 시맨틱 마크업으로 정리하고 ARIA 속성 보완</dd>
-                <dt>STACK</dt>
-                <dd>HTML · CSS · JavaScript</dd>
-              </dl>
-              <div class="work__links">
-                <a class="btn btn--solid btn--sm" href="./bank/bank-index.html">사이트 보기</a>
-              </div>
-            </div>
-          </article>
-        </li>
-
-        <li>
-          <article class="work" aria-labelledby="work-3">
-            <div class="work__media">
-              <img src="./image/thumb_salady_main.jpg" alt="샐러디 홈페이지 화면" />
-            </div>
-            <div class="work__body">
-              <p class="work__category">03 · PERSONAL · RENEWAL</p>
-              <h3 class="work__title" id="work-3">샐러디 홈페이지</h3>
-              <dl class="work__info">
-                <dt>OVERVIEW</dt>
-                <dd>2023년에 만든 브랜드 홈페이지를 직접 리뉴얼</dd>
-                <dt>ROLE</dt>
-                <dd>유지보수 · 코드 개선 · 반응형</dd>
-                <dt>POINT</dt>
-                <dd>jQuery · Slick 제거 후 바닐라 JS로 전환, BEM·접근성·반응형 개선</dd>
-                <dt>STACK</dt>
-                <dd>HTML · CSS · JavaScript</dd>
-              </dl>
-              <div class="work__links">
-                <a class="btn btn--solid btn--sm" href="./salady/salady-index.html">사이트 보기</a>
-                <a class="btn btn--outline btn--sm" href="https://github.com/pyeonh8/salady-refactoring" target="_blank"
                   rel="noopener">GitHub<span class="sr-only">(새 탭)</span></a>
               </div>
             </div>
