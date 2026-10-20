@@ -13,6 +13,7 @@
   padding: 0 var(--space-32);
   border-radius: var(--radius-pill);
   font-weight: 600;
+  transition: 0.3s;
 }
 
 .btn--solid {
@@ -20,8 +21,18 @@
   color: var(--color-bg);
 }
 
+.btn--solid:hover,
+.btn--solid:focus-visible {
+  background-color: var(--color-point-hover);
+}
+
 .btn--outline {
   border: 1px solid var(--color-line-strong);
+}
+
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  border: 1px solid var(--color-point);
 }
 
 .section-label {
@@ -281,12 +292,9 @@
   margin-bottom: var(--space-64);
 }
 
-.work__media {
-  flex: 1 1 560px;
-}
-
+.work__media,
 .work__body {
-  flex: 1 1 400px;
+  flex: 1 1 0;
   min-width: 0;
 }
 
@@ -325,15 +333,22 @@
   margin-bottom: var(--space-8);
 }
 
+.work__screens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+}
+
 .work__links {
   display: flex;
   gap: var(--space-8);
   flex-wrap: wrap;
 }
 
+.work__screens .btn,
 .work__links .btn {
   min-height: var(--control-md);
-  padding: var(--space-12) var(--space-24);
+  padding: 0 var(--space-16);
 }
 
 /* 학습 프로젝트 ---------------------------- */
@@ -461,7 +476,7 @@
   }
 
   .work__info {
-    grid-template-columns: 88px 1fr;
+    grid-template-columns: 80px 1fr;
     gap: var(--space-12) var(--space-16);
     margin-bottom: var(--space-24);
   }
@@ -539,6 +554,8 @@
       "title desc links";
   }
 }
+
+/* 애니메이션 ------------------------------------ */
 
 @keyframes heroIllust {
   0%,

@@ -91,6 +91,15 @@ h2 {
   padding-inline: var(--gutter);
 }
 
+.flex {
+  display: flex;
+  gap: var(--space-12);
+}
+
+.flex-direction__column {
+  flex-direction: column;
+}
+
 /* 모션 줄이기 설정 존중 */
 @media (prefers-reduced-motion: reduce) {
   *,

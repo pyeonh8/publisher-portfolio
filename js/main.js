@@ -1,3 +1,5 @@
+import { initSiteViewer } from "./site-viewer.js";
+
 const keywordsCopy = () => {
   const keywords = document.querySelectorAll(".keywords__row");
   const windowWidth = window.innerWidth;
@@ -35,6 +37,7 @@ const keywordPaused = () => {
 
 keywordsCopy();
 keywordPaused();
+initSiteViewer();
 
 // 2단계: GSAP 모션 (직접 작성)
 // - 키워드 띠 흐르기 (hover·포커스 시 멈춤, prefers-reduced-motion이면 정지)

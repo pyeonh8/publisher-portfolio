@@ -7,12 +7,17 @@
   <title>박연희 | 퍼블리셔 포트폴리오</title>
   <meta name="description" content="디자인부터 반영까지 하는 퍼블리셔 박연희의 포트폴리오입니다." />
 
+  <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap"
     rel="stylesheet" />
+  <!-- style -->
   <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- script -->
+  <script defer src="./js/vendor/glightbox.min.js"></script>
   <script type="module" src="./js/main.js"></script>
 </head>
 
@@ -178,9 +183,16 @@
                 <dt>STACK</dt>
                 <dd>HTML · CSS · JavaScript</dd>
               </dl>
-              <div class="work__links">
-                <a class="btn btn--solid btn--sm" href="./bank/bank-index.html">사이트 보기</a>
-              </div>
+
+              <ul class="work__screens" aria-label="은행 통합 관리자 센터 화면">
+                <li><a class="btn btn--solid  glightbox" href="./bank/html/login.html" data-gallery="bank">로그인</a></li>
+                <li><a class="btn btn--outline  glightbox" href="./bank/html/main.html" data-gallery="bank">메인</a>
+                </li>
+                <li><a class="btn btn--outline  glightbox" href="./bank/html/list.html" data-gallery="bank">목록</a>
+                </li>
+                <li><a class="btn btn--outline  glightbox" href="./bank/html/modal.html" data-gallery="bank">팝업</a>
+                </li>
+              </ul>
             </div>
           </article>
         </li>
@@ -203,10 +215,17 @@
                 <dt>STACK</dt>
                 <dd>HTML · CSS · JavaScript</dd>
               </dl>
-              <div class="work__links">
-                <a class="btn btn--solid btn--sm" href="./salady/salady-main.html">사이트 보기</a>
-                <a class="btn btn--outline btn--sm" href="https://github.com/pyeonh8/salady-refactoring" target="_blank"
-                  rel="noopener">GitHub<span class="sr-only">(새 탭)</span></a>
+
+              <div class="flex">
+                <ul class="work__screens" aria-label="샐러디 홈페이지 화면">
+                  <li>
+                    <a class="btn btn--solid  glightbox" href="./salady/salady-main.html" data-gallery="salady">메인</a>
+                  </li>
+                </ul>
+                <div class="work__links">
+                  <a class="btn btn--outline " href="https://github.com/pyeonh8/salady-refactoring" target="_blank"
+                    rel="noopener">GitHub<span class="sr-only">(새 탭)</span></a>
+                </div>
               </div>
             </div>
           </article>
@@ -231,13 +250,35 @@
                 <dt>STACK</dt>
                 <dd>HTML · CSS · JavaScript</dd>
               </dl>
-              <div class="work__links">
-                <a class="btn btn--solid btn--sm" href="https://pyeonh8.github.io/animal-hospital/" target="_blank"
-                  rel="noopener">사이트 보기<span class="sr-only">(새 탭)</span></a>
-                <a class="btn btn--outline btn--sm" href="https://pyeonh8.github.io/animal-hospital/guide/"
-                  target="_blank" rel="noopener">컴포넌트 가이드<span class="sr-only">(새 탭)</span></a>
-                <a class="btn btn--outline btn--sm" href="https://github.com/pyeonh8/animal-hospital" target="_blank"
-                  rel="noopener">GitHub<span class="sr-only">(새 탭)</span></a>
+
+              <div class="flex flex-direction__column">
+                <ul class="work__screens" aria-label="멍냥 동물병원 화면">
+                  <li>
+                    <a class="btn btn--solid  glightbox" href="https://pyeonh8.github.io/animal-hospital/"
+                      target="_blank" rel="noopener" data-gallery="animal">메인</a>
+                  </li>
+                  <li>
+                    <a class="btn btn--outline  glightbox"
+                      href="https://pyeonh8.github.io/animal-hospital/sub/reserve.html" target="_blank" rel="noopener"
+                      data-gallery="animal">진료 예약</a>
+                  </li>
+                  <li>
+                    <a class="btn btn--outline  glightbox"
+                      href="https://pyeonh8.github.io/animal-hospital/sub/notice.html" target="_blank" rel="noopener"
+                      data-gallery="animal">공지사항</a>
+                  </li>
+                </ul>
+
+                <div class="work__links">
+                  <a class="btn btn--outline  glightbox" href="https://pyeonh8.github.io/animal-hospital/guide/"
+                    target="_blank" rel="noopener" data-gallery="animal-guide">
+                    컴포넌트 가이드
+                  </a>
+                  <a class="btn btn--outline " href="https://github.com/pyeonh8/animal-hospital" target="_blank"
+                    rel="noopener">
+                    GitHub<span class="sr-only">(새 탭)</span>
+                  </a>
+                </div>
               </div>
             </div>
           </article>
@@ -258,8 +299,8 @@
           <p class="study-list__desc">개인 · 시맨틱 마크업과 스크린리더 대응으로 Lighthouse 접근성 96점, 타이머 로직을 커스텀 훅으로 분리</p>
           <p class="study-list__stack">Next.js · TypeScript</p>
           <div class="study-list__links">
-            <a href="https://acnh-adventure.vercel.app/" target="_blank" rel="noopener">사이트<span class="sr-only"> 탐험해요
-                뽀모도로 타이머 (새 탭)</span></a>
+            <a href="https://acnh-adventure.vercel.app/" target="_blank" rel="noopener" class="glightbox">사이트<span
+                class="sr-only"> 탐험해요 뽀모도로 타이머</span></a>
             <a href="https://github.com/pyeonh8/explorer-ui-kit" target="_blank" rel="noopener">GitHub<span
                 class="sr-only"> 탐험해요 뽀모도로 타이머 (새 탭)</span></a>
           </div>

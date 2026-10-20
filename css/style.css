@@ -1,4 +1,5 @@
-/* 불러오는 순서: 변수 → 기본 → 섹션 */
+/* 불러오는 순서: 변수 → 기본 → 라이브러리 → 섹션 */
 @import url("./tokens.css");
 @import url("./base.css");
+@import url("./vendor/glightbox.min.css");
 @import url("./main.css");
