@@ -232,9 +232,9 @@
   font-weight: 700;
 }
 
-/* flex-basis 0 : 안내 영역이 카드 영역 높이를 늘리지 않고 남는 높이만 차지 */
 .accordion {
   flex: 1 1 0;
   min-height: 0;
   overflow-y: auto;
+  overflow-x: hidden;
 }
