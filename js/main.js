@@ -1,6 +1,9 @@
 import { initSiteViewer } from "./site-viewer.js";
 
+// 키워드 복사 ====================================
+
 const keywordsCopy = () => {
+  const section = document.querySelector(".keywords");
   const keywords = document.querySelectorAll(".keywords__row");
   const windowWidth = window.innerWidth;
 
@@ -20,7 +23,12 @@ const keywordsCopy = () => {
     const clonedKeyword = keyword.cloneNode(true);
     keyword.parentElement.appendChild(clonedKeyword).setAttribute("aria-hidden", true);
   });
+
+  // 애니메이션 실행
+  section.setAttribute("data-ready", "true");
 };
+
+// 키워드 일시정지 ====================================
 
 const keywordPaused = () => {
   const section = document.querySelector(".keywords");

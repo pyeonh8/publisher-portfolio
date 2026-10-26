@@ -144,6 +144,9 @@
 .keywords__inner {
   display: flex;
   width: max-content;
+}
+
+.keywords[data-ready="true"] .keywords__inner {
   animation: keywords 60s linear infinite;
 }
 
@@ -291,12 +294,6 @@
   gap: var(--space-48);
   margin-bottom: var(--space-64);
 }
-
-/* .work__media,
-.work__body {
-  flex: 1 1 0;
-  min-width: 0;
-} */
 
 .work__media img {
   object-fit: cover;
