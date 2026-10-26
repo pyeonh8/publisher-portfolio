@@ -292,11 +292,11 @@
   margin-bottom: var(--space-64);
 }
 
-.work__media,
+/* .work__media,
 .work__body {
   flex: 1 1 0;
   min-width: 0;
-}
+} */
 
 .work__media img {
   object-fit: cover;
@@ -545,6 +545,12 @@
 
   .work--reverse {
     flex-direction: row-reverse;
+  }
+
+  .work__media,
+  .work__body {
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   .study-list__item {
