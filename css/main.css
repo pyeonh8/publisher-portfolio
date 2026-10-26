@@ -461,6 +461,12 @@
   color: var(--color-text-label);
 }
 
+/* 라이브러리 CSS 변경 ------------------------------------ */
+
+.gslide-external {
+  max-height: 100vh !important;
+}
+
 /* 반응형 ------------------------------------ */
 
 @media (min-width: 768px) {
